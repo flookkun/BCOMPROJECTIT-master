@@ -16,6 +16,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.app.supawit.bcomprojectit.Fragment.EditFragment;
+import com.app.supawit.bcomprojectit.Fragment.HistoryFragment;
 import com.app.supawit.bcomprojectit.Fragment.menuQAFragment;
 
 import java.sql.Connection;
@@ -193,6 +194,17 @@ public class Main extends AppCompatActivity implements NavigationView.OnNavigati
             Intent login = new Intent(getApplicationContext(),Login.class);
             startActivity(login);
             finish();
+        }
+        else if (id == R.id.nav_history){
+
+            HistoryFragment historyFragment = new HistoryFragment();
+            Bundle bundle = new Bundle();
+            bundle.putString("Key",area);
+            historyFragment.setArguments(bundle);
+
+            android.support.v4.app.FragmentTransaction fragTransaction =
+                    getSupportFragmentManager().beginTransaction();
+            fragTransaction.replace(R.id.fragment_con,historyFragment).addToBackStack("tag").commit();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
