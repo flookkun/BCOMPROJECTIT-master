@@ -34,7 +34,7 @@ public class HOME extends Fragment implements View.OnClickListener  {
         hisbtn = (Button) v.findViewById(R.id.button3);
         rptbtn = (Button) v.findViewById(R.id.button2);
         mapbtn = (Button) v.findViewById(R.id.button4);
-
+        getActivity().setTitle("QSC");
         Bundle bundle  = this.getArguments();
         String area = bundle.getString("Key");
 

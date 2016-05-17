@@ -3,6 +3,8 @@ package com.app.supawit.bcomprojectit;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -12,6 +14,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.app.supawit.bcomprojectit.Fragment.EditFragment;
+import com.app.supawit.bcomprojectit.Fragment.menuQAFragment;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -106,9 +111,8 @@ public class Main extends AppCompatActivity implements NavigationView.OnNavigati
             connectionSQL = new ConnectionSQL();
             Connection con = connectionSQL.CONN();
             stmt = con.createStatement();
-            String query = "USE[CMD-BX]" +
-                           "select * from mas_st " +
-                           "where stcode = '" + st +"'" ;
+            String query = "select * from mas_user " +
+                           "where USERNAME = '" + st +"'" ;
             rs = stmt.executeQuery(query);
 
             if(rs.next())
@@ -156,16 +160,30 @@ public class Main extends AppCompatActivity implements NavigationView.OnNavigati
             fragmentManager.popBackStack("tag",1);
             fragmentManager.executePendingTransactions();
 
+            //HOME fragment = new HOME();
+            //FragmentManager fragmentManager = getFragmentManager();
+            //FragmentTransaction fragTransaction = fragmentManager.beginTransaction();
+            //fragTransaction.replace(R.id.fragment_con,fragment);
+            //fragTransaction.replace(R.id.fragment_con,fragment).addToBackStack(null).commit();
+            //HOME fragment = new HOME();
+            //android.support.v4.app.FragmentTransaction fragmentTransaction =
+            //        getSupportFragmentManager().beginTransaction();
+            //fragmentTransaction.replace(R.id.fragment_con,fragment).addToBackStack(null).commit();
+
 
         }
         else if (id == R.id.nav_manage) {
 
 
-           /* EditFragment fragment = new EditFragment();
-            android.support.v4.app.FragmentTransaction fragmentTransaction =
+           EditFragment fragment = new EditFragment();
+
+            Bundle bundle = new Bundle();
+            bundle.putString("Key",area);
+            fragment.setArguments(bundle);
+
+            android.support.v4.app.FragmentTransaction fragTransaction =
                     getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.fragment_con,fragment);
-            fragmentTransaction.com mit();*/
+            fragTransaction.replace(R.id.fragment_con,fragment).addToBackStack("tag").commit();
             /*Intent edit = new Intent(getApplicationContext(),Edit.class);
             edit.putExtra("STCODE",st);
             startActivity(edit);*/

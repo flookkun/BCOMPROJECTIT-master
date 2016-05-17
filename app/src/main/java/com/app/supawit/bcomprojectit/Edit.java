@@ -92,11 +92,9 @@ public class Edit extends AppCompatActivity {
                             }
                             else {
                                 String query = "update mas_st " +
-                                "set STCODE = '"+stcode+"',FULLNAME = '"+fullname+"',TEL = '"+tel+"',EMAIL = '"+email+"' "+
-                                "where STCODE = '"+stcM+"' "+
-                                "update sqltest "+
-                                "set password = '"+password+"',STCODE = '"+stcode+"' "+
-                                "where stcode = '"+stcM+"' ";
+                                "set STCODE = '"+stcode+"',FULLNAME = '"+fullname+"'" +
+                                        ",TEL = '"+tel+"',EMAIL = '"+email+"' "+
+                                "where STCODE = '"+stcM+"' ";
                                 Statement stmt = con.createStatement();
                                 //ResultSet rs = stmt.executeQuery(query);
                                 stmt.executeUpdate(query);
