@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.BaseAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -19,12 +20,14 @@ import android.widget.Toast;
 
 import com.app.supawit.bcomprojectit.ConnectionSQL;
 import com.app.supawit.bcomprojectit.R;
+import com.app.supawit.bcomprojectit.View.CustomAdepter;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Locale;
 
 
 /**
@@ -73,7 +76,7 @@ public class warehouseFragment extends Fragment {
             while(rs.next()) {
                 abbname = rs.getString("ABBNAME");
                 String whcode = rs.getString("WHCODE");
-                list.add(whcode + ":" + abbname);
+                list.add(whcode + " : " + abbname);
             }
 
         } catch (SQLException e) {
@@ -111,7 +114,9 @@ public class warehouseFragment extends Fragment {
             @Override
             public void onTextChanged(CharSequence cs, int arg1, int arg2, int arg3) {
                 // When user changed the Text
-                warehouseFragment.this.adapter.getFilter().filter(cs);
+
+                //warehouseFragment.this.adapter.getFilter().filter(cs);
+
             }
 
             @Override
@@ -124,12 +129,18 @@ public class warehouseFragment extends Fragment {
             @Override
             public void afterTextChanged(Editable arg0) {
                 // TODO Auto-generated method stub
+
+                String text = inputSearch.getText().toString().toLowerCase(Locale.getDefault());
+                adapter.getFilter().filter(text);
+
             }
 
         });
 
+
         return v;
     }
+
 
     class ItemList implements AdapterView.OnItemClickListener{
         @Override

@@ -51,32 +51,22 @@
             style="@android:style/Widget.Holo.Light.ProgressBar.Large"
             android:id="@+id/pbbar"
             />
-        <android.support.v7.widget.CardView
-            android:layout_marginTop="80dp"
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:card_view="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/card1qa"
-            card_view:cardElevation="2dp"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            card_view:cardMaxElevation="8dp"
-            android:layout_gravity="center"
 
-            >
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+        <RelativeLayout
+            android:id="@+id/Relativebtnlogin"
+            android:layout_width="match_parent"
+            android:background="@drawable/bgbtn"
+            android:layout_height="50dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="เข้าสู่ระบบ"
+                android:layout_centerInParent="true"
+                android:textColor="#FFF"
                 android:textStyle="bold"
-                android:textSize="20sp"
-                android:padding="10dp"
-                android:id="@+id/btnlogin"
-                android:text="ตกลง"
-                android:background="#FDB5C8"
-                android:layout_below="@+id/linearLayout"
-                android:layout_centerHorizontal="true" />
-        </android.support.v7.widget.CardView>
+                android:textSize="16dp"/>
+
+        </RelativeLayout>
 
     </LinearLayout>
     <TextView

@@ -38,7 +38,7 @@ public class MainFragment extends Fragment{
     List<String> groupList;
     CustomViewGroup viewGroup1,viewGroup2,viewGroup3,viewGroup4;
     TextView az,date1,date2,date3,date4;
-    int i = 0;
+    int ii = 0;
     int vg1 = 0,vg2 = 0,vg3 = 0,vg4 = 0;
     int vb1 = 0,vb2 = 0,vb3 = 0,vb4 = 0;
     EditText ed1,ed2,ed3,ed4;
@@ -75,7 +75,7 @@ public class MainFragment extends Fragment{
         az = (TextView) v.findViewById(R.id.txtscore);
 
 
-        az.setText(i+"/4");
+        az.setText(ii+"/4");
         if(chk==1){
 
             /// set ViewGroup ///
@@ -169,7 +169,7 @@ public class MainFragment extends Fragment{
                             break;
                     }
 
-                    az.setText(i+vg1+vg2+vg3+vg4+"/4");
+                    az.setText(ii+vg1+vg2+vg3+vg4+"/4");
 
                 }
 
@@ -198,7 +198,7 @@ public class MainFragment extends Fragment{
                             //az.setText("2/30");
                             break;
                     }
-                    az.setText(i+vg1+vg2+vg3+vg4+"/4");
+                    az.setText(ii+vg1+vg2+vg3+vg4+"/4");
                 }
             });
 
@@ -219,7 +219,7 @@ public class MainFragment extends Fragment{
                             //ea3 = ed3.getText().toString();
                             break;
                     }
-                    az.setText(i+vg1+vg2+vg3+vg4+"/4");
+                    az.setText(ii+vg1+vg2+vg3+vg4+"/4");
                 }
             });
 
@@ -243,7 +243,7 @@ public class MainFragment extends Fragment{
                             //ea4 = ed4.getText().toString();
                             break;
                     }
-                    az.setText(i+vg1+vg2+vg3+vg4+"/4");
+                    az.setText(ii+vg1+vg2+vg3+vg4+"/4");
                 }
             });
 
@@ -296,7 +296,7 @@ public class MainFragment extends Fragment{
                     int max = 4;
 
                     int[] allscore = new int[1];
-                    allscore[0] = max - (i+vg1+vg2+vg3+vg4);
+                    allscore[0] = max - (ii+vg1+vg2+vg3+vg4);
 
                     String text[] = new String[4];
 
@@ -503,7 +503,7 @@ public class MainFragment extends Fragment{
             viewGroup4.setDate(olddt[3]);
 
 
-            az.setText(i+vb1+vb2+vb3+vb4+"/4");
+            az.setText(ii+vb1+vb2+vb3+vb4+"/4");
 
 
 
@@ -528,7 +528,7 @@ public class MainFragment extends Fragment{
                             break;
                     }
 
-                    az.setText(i+vb1+vb2+vb3+vb4+"/4");
+                    az.setText(ii+vb1+vb2+vb3+vb4+"/4");
 
                 }
 
@@ -557,7 +557,7 @@ public class MainFragment extends Fragment{
                             //az.setText("2/30");
                             break;
                     }
-                    az.setText(i+vb1+vb2+vb3+vb4+"/4");
+                    az.setText(ii+vb1+vb2+vb3+vb4+"/4");
                 }
             });
 
@@ -578,7 +578,7 @@ public class MainFragment extends Fragment{
                             //ea3 = ed3.getText().toString();
                             break;
                     }
-                    az.setText(i+vb1+vb2+vb3+vb4+"/4");
+                    az.setText(ii+vb1+vb2+vb3+vb4+"/4");
                 }
             });
 
@@ -602,7 +602,7 @@ public class MainFragment extends Fragment{
                             //ea4 = ed4.getText().toString();
                             break;
                     }
-                    az.setText(i+vb1+vb2+vb3+vb4+"/4");
+                    az.setText(ii+vb1+vb2+vb3+vb4+"/4");
                 }
             });
 
@@ -618,7 +618,7 @@ public class MainFragment extends Fragment{
                 @Override
                 public void onClick(View v) {
                     int max = 4;
-                    allscore[0] = max - (i+vb1+vb2+vb3+vb4);
+                    allscore[0] = max - (ii+vb1+vb2+vb3+vb4);
 
                     //Toast.makeText(getContext(),"score : = "+ allscore[0],Toast.LENGTH_SHORT).show();
                     String text[] = new String[4];
@@ -642,31 +642,26 @@ public class MainFragment extends Fragment{
 
 
                     try {
+
                         connectionSQL = new ConnectionSQL();
+
                         Connection con = connectionSQL.CONN();
                         for (int i = 0 ; i < 4 ;i++)
                         {
                             stmt = con.createStatement();
                             String commands = "update MAS_PJ " +
-                                    "set POINT = '"+point[i]+"',TOTAL_POINT = '"+az.getText().toString()+"',DOCUPDATE = CONVERT(VARCHAR(10),GETDATE(),110),DATE = '"+dd[i]+"',DOC_TEXT = '"+text[i]+"'  "+
-                                    "where DOC_NUMBER = '"+a+"'";
+                                    "set POINT = '"+ point[i] +"',TOTAL_POINT = '"+az.getText().toString()+"" +
+                                    "',DOCUPDATE = CONVERT(VARCHAR(10),GETDATE(),110),DATE = '"+dd[i]+"',DOC_TEXT = '"+text[i]+"'  "+
+                                    "where DOC_NUMBER = '"+a+"' and DOC_HEAD like '"+(i+1)+"%' ";
                                     //"select '"+a+"','"+ head[i]+"','"+area+"',GETDATE(),'"+dd[i]+"','"+text[i]+"','"+ point[i] +"','"+az.getText().toString()+"'";
                                     //" VALUES ('"+a+"','"+head[i]+"','"+area+"',CONVERT(VARCHAR(10),GETDATE(),110),'"+dd[i]+"','"+text[i]+"','"+ point[i] +"','"+az.getText().toString()+"',CONVERT(VARCHAR(10),GETDATE(),110))";
                             PreparedStatement preStmt = con.prepareStatement(commands);
                             preStmt.executeUpdate();
+                            //Toast.makeText(getContext(),"jkj = "+ (i+1),Toast.LENGTH_SHORT).show();
                         }
-                        stmt = con.createStatement();
-                        String commands = "update MAS_PJ_REPORT " +
-                                "set COUNTEDIT = '"+allscore[0]+"',TOTAL_POINT = '"+az.getText().toString()+"' " +
-                                "where DOC_NUMBER = '"+a+"'";
-                                //"select '"+a+"','"+ head[i]+"','"+area+"',GETDATE(),'"+dd[i]+"','"+text[i]+"','"+ point[i] +"','"+az.getText().toString()+"'";
-                                //" VALUES ('"+ whcode +"','"+a+"','"+area+"',CONVERT(VARCHAR(10),GETDATE(),110),'"+az.getText().toString()+"','"+allscore[0]+"')";
-                        PreparedStatement preStmt = con.prepareStatement(commands);
-                        preStmt.executeUpdate();
-                        Toast.makeText(getActivity(),"บันทึกสำเร็จ",Toast.LENGTH_SHORT).show();
-                        //เปิดหน้า fragment
-                        //getFragmentManager().executePendingTransactions();
-                        getFragmentManager().popBackStack();
+                        //////////////////////////////////////////////
+
+                        //getFragmentManager().popBackStack();
 
                     }catch (SQLException ex){
                         Toast.makeText(getActivity(),ex.toString(),Toast.LENGTH_SHORT).show();
@@ -680,6 +675,36 @@ public class MainFragment extends Fragment{
                         Toast.makeText(getActivity(),ex.toString(),Toast.LENGTH_SHORT).show();
                     }
 
+
+                    try {
+                        connectionSQL = new ConnectionSQL();
+                        Connection con = connectionSQL.CONN();
+                        stmt = con.createStatement();
+                        String commands = "update MAS_PJ_REPORT " +
+                                "set COUNTEDIT = '"+allscore[0]+"',TOTAL_POINT = '"+az.getText().toString()+"' " +
+                                "where DOC_NUMBER = '"+a+"'";
+                        //"select '"+a+"','"+ head[i]+"','"+area+"',GETDATE(),'"+dd[i]+"','"+text[i]+"','"+ point[i] +"','"+az.getText().toString()+"'";
+                        //" VALUES ('"+ whcode +"','"+a+"','"+area+"',CONVERT(VARCHAR(10),GETDATE(),110),'"+az.getText().toString()+"','"+allscore[0]+"')";
+                        PreparedStatement preStmt = con.prepareStatement(commands);
+                        preStmt.executeUpdate();
+                        Toast.makeText(getActivity(),"บันทึกสำเร็จ",Toast.LENGTH_SHORT).show();
+                        //เปิดหน้า fragment
+                        //getFragmentManager().executePendingTransactions();
+                        //////////////////////////////////////////////
+
+                    }catch (SQLException ex){
+                        Toast.makeText(getActivity(),ex.toString(),Toast.LENGTH_SHORT).show();
+                    } catch (IOError ex) {
+                        Toast.makeText(getActivity(),ex.toString(),Toast.LENGTH_SHORT).show();
+                    } catch (AndroidRuntimeException ex) {
+                        Toast.makeText(getActivity(),ex.toString(),Toast.LENGTH_SHORT).show();
+                    } catch (NullPointerException ex) {
+                        Toast.makeText(getActivity(),ex.toString(),Toast.LENGTH_SHORT).show();
+                    } catch (Exception ex) {
+                        Toast.makeText(getActivity(),ex.toString(),Toast.LENGTH_SHORT).show();
+                    }
+
+                    getFragmentManager().popBackStack();
 
 
                 }

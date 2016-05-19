@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -42,6 +43,7 @@ public class Login extends AppCompatActivity implements GoogleApiClient.Connecti
     LocationManager locationManager;
     String mprovider;
     TextView txtLat;
+    RelativeLayout btn;
     double la;
     double lo;
     private GoogleApiClient googleApiClient;
@@ -57,9 +59,10 @@ public class Login extends AppCompatActivity implements GoogleApiClient.Connecti
         connectionSQL = new ConnectionSQL();
         etuserid = (EditText) findViewById(R.id.edtuserid);
         edtpass = (EditText) findViewById(R.id.edtpass);
-        btnlogin = (Button) findViewById(R.id.btnlogin);
+        //btnlogin = (Button) findViewById(R.id.btnlogin);
         pbbar = (ProgressBar) findViewById(R.id.pbbar);
         txtLat = (TextView) findViewById(R.id.longtxt);
+        btn = (RelativeLayout) findViewById(R.id.Relativebtnlogin);
         pbbar.setVisibility(View.GONE);
         requestQueue = Volley.newRequestQueue(this);
 
@@ -76,7 +79,7 @@ public class Login extends AppCompatActivity implements GoogleApiClient.Connecti
 
 
         /// LOGIN ///
-        btnlogin.setOnClickListener(new View.OnClickListener() {
+        btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Dologin dologin = new Dologin();

@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.app.supawit.bcomprojectit.ConnectionSQL;
@@ -32,6 +33,7 @@ public class EditFragment extends Fragment {
     ConnectionSQL connectionSQL;
     Statement stmt = null;
     ResultSet rs = null;
+    RelativeLayout btned;
     public EditFragment() {
         // Required empty public constructor
     }
@@ -50,9 +52,9 @@ public class EditFragment extends Fragment {
         fullname = (EditText) v.findViewById(R.id.edfullname);
         tel = (EditText) v.findViewById(R.id.edphone);
         email = (EditText) v.findViewById(R.id.edemail);
-        save = (Button) v.findViewById(R.id.buttonsave);
+        //save = (Button) v.findViewById(R.id.buttonsave);
         userdt = (EditText) v.findViewById(R.id.edusername);
-
+        btned = (RelativeLayout) v.findViewById(R.id.relativebtnedit);
         ///set data in edittext
 
         try {
@@ -84,7 +86,7 @@ public class EditFragment extends Fragment {
 
 
 
-        save.setOnClickListener(new View.OnClickListener() {
+        btned.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //Toast.makeText(getContext(),password.getText().toString(),Toast.LENGTH_SHORT).show();

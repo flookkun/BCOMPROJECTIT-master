@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.app.supawit.bcomprojectit.ConnectionSQL;
@@ -34,6 +35,7 @@ public class menuQAFragment extends Fragment {
     String abbname;
     ConnectionSQL connectionSQL;
     Integer check = 1;
+    RelativeLayout btna,btnb;
     public menuQAFragment() {
         // Required empty public constructor
     }
@@ -68,10 +70,12 @@ public class menuQAFragment extends Fragment {
 
         final TextView test = (TextView) v.findViewById(R.id.txttest);
         test.setText(a.substring(0,4)+"-"+ area +"QS"+ dateString.substring(2,8)+"01" );
-        Button btnc = (Button) v.findViewById(R.id.btncamera);
-        Button btnq = (Button) v.findViewById(R.id.btnqa);
+        //Button btnc = (Button) v.findViewById(R.id.btncamera);
+        //Button btnq = (Button) v.findViewById(R.id.btnqa);
+        btna = (RelativeLayout) v.findViewById(R.id.relativebtn1);
+        btnb = (RelativeLayout) v.findViewById(R.id.relativebtn2);
 
-        btnc.setOnClickListener(new View.OnClickListener() {
+        btnb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 CapFragment fragment = new CapFragment();
@@ -88,7 +92,7 @@ public class menuQAFragment extends Fragment {
         });
 
 
-        btnq.setOnClickListener(new View.OnClickListener() {
+        btna.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 MainFragment fragment = new MainFragment();
