@@ -110,7 +110,7 @@ public class MainserviceFragment extends Fragment {
 
         score.setText(ii+"/18");
 
-        getActivity().setTitle("Services");
+        getActivity().setTitle("Services ( บริการ )");
 
         TextView txt = (TextView) v.findViewById(R.id.txtqsc2);
 

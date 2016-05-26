@@ -95,7 +95,7 @@ public class MainFragment extends Fragment{
 
         //createGroupList();
         //createCollection();
-        getActivity().setTitle("Quanlity");
+        getActivity().setTitle("Quanlity ( คุณภาพสินค้า )");
         final RadioGroup rg1,rg2,rg3,rg4,rg5,rg6,rg7,rg8,rg9,rg10,rg11,rg12,rg13,rg14,rg15,rg16,rg17;
         final Bundle bundle  = this.getArguments();
         final String head[] = new String[100];

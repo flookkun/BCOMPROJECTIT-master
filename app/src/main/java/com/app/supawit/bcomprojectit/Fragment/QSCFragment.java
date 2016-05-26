@@ -39,7 +39,7 @@ public class QSCFragment extends Fragment {
         final Integer check = bundle.getInt("chk");
         final TextView txt = (TextView) v.findViewById(R.id.txtqsc1);
 
-        Toast.makeText(getContext(),"cc = "+check,Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getContext(),"cc = "+check,Toast.LENGTH_SHORT).show();
         r1 = (RelativeLayout) v.findViewById(R.id.relativebtnqsc1);
         r2 = (RelativeLayout) v.findViewById(R.id.relativebtnqsc2);
         r3 = (RelativeLayout) v.findViewById(R.id.relativebtnqsc3);
@@ -47,7 +47,7 @@ public class QSCFragment extends Fragment {
         if(check == 0){
 
             txt.setText("");
-            Toast.makeText(getContext(),"vv = "+test,Toast.LENGTH_SHORT).show();
+            //Toast.makeText(getContext(),"vv = "+test,Toast.LENGTH_SHORT).show();
             r1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

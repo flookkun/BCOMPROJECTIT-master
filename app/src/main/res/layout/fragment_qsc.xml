@@ -37,6 +37,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Quanlity"
+                android:textSize="18dp"
                 android:textStyle="bold"
                 android:textColor="#FFF"
                 android:layout_centerInParent="true"/>
@@ -57,6 +58,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Services"
+                android:textSize="18dp"
                 android:textStyle="bold"
                 android:textColor="#FFF"
                 android:layout_centerInParent="true"/>
@@ -76,6 +78,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textSize="18dp"
                 android:text="Cleanliness"
                 android:textStyle="bold"
                 android:textColor="#FFF"

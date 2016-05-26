@@ -128,7 +128,7 @@ public class MainCleanFragment extends Fragment {
 
         score.setText(ii+"/29");
 
-        getActivity().setTitle("Cleanliness");
+        getActivity().setTitle("Cleanliness ( ความสะอาด )");
 
         TextView txt = (TextView) v.findViewById(R.id.txtqsc2);
 
