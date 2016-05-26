@@ -1,28 +1,10 @@
-
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingTop="50dp"
-    tools:context=".Fragment.MainFragment"
-    >
-
-
-
-    <!-- TODO: Update blank fragment layout -->
-
-
-    <!---
-    <ExpandableListView
-        android:id="@+id/ep_list"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="60dp"
-        android:divider="#FDB5C8"
-        android:dividerHeight="2dp" />
-        -->
-
+    tools:context="com.app.supawit.bcomprojectit.Fragment.MainCleanFragment">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -30,25 +12,28 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            >
 
             <TextView
-                android:layout_marginTop="20dp"
+
+                android:textSize="15dp"
                 android:layout_marginLeft="14dp"
                 android:textStyle="bold"
-                android:textSize="15dp"
+                android:layout_marginTop="20dp"
+                android:id="@+id/txtqsc2"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/txttest1"
-                android:text="กกก"/>
+                android:layout_height="match_parent"
+                android:text="@string/hello_blank_fragment" />
+
 
 
 
             <com.app.supawit.bcomprojectit.View.CustomViewGroup
                 android:layout_marginLeft="14dp"
                 android:layout_marginRight="14dp"
-                android:layout_below="@id/txttest1"
-                android:id="@+id/viewgroup1"
+                android:layout_below="@id/txtqsc2"
+                android:id="@+id/viewgroup11"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"
@@ -59,131 +44,7 @@
             <com.app.supawit.bcomprojectit.View.CustomViewGroup
                 android:layout_marginLeft="14dp"
                 android:layout_marginRight="14dp"
-                android:id="@+id/viewgroup2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/viewgroup1"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true">
-            </com.app.supawit.bcomprojectit.View.CustomViewGroup>
-
-
-            <com.app.supawit.bcomprojectit.View.CustomViewGroup
-                android:layout_marginLeft="14dp"
-                android:layout_marginRight="14dp"
-                android:id="@+id/viewgroup3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/viewgroup2"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true">
-            </com.app.supawit.bcomprojectit.View.CustomViewGroup>
-
-
-            <com.app.supawit.bcomprojectit.View.CustomViewGroup
-                android:layout_marginLeft="14dp"
-                android:layout_marginRight="14dp"
-                android:id="@+id/viewgroup4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/viewgroup3"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true">
-
-            </com.app.supawit.bcomprojectit.View.CustomViewGroup>
-
-            <com.app.supawit.bcomprojectit.View.CustomViewGroup
-                android:layout_marginLeft="14dp"
-                android:layout_marginRight="14dp"
-                android:id="@+id/viewgroup5"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/viewgroup4"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true">
-
-            </com.app.supawit.bcomprojectit.View.CustomViewGroup>
-
-
-            <com.app.supawit.bcomprojectit.View.CustomViewGroup
-                android:layout_marginLeft="14dp"
-                android:layout_marginRight="14dp"
-                android:id="@+id/viewgroup6"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/viewgroup5"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true">
-
-            </com.app.supawit.bcomprojectit.View.CustomViewGroup>
-
-            <com.app.supawit.bcomprojectit.View.CustomViewGroup
-                android:layout_marginLeft="14dp"
-                android:layout_marginRight="14dp"
-                android:id="@+id/viewgroup7"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/viewgroup6"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true">
-
-            </com.app.supawit.bcomprojectit.View.CustomViewGroup>
-
-            <com.app.supawit.bcomprojectit.View.CustomViewGroup
-                android:layout_marginLeft="14dp"
-                android:layout_marginRight="14dp"
-                android:id="@+id/viewgroup8"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/viewgroup7"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true">
-
-            </com.app.supawit.bcomprojectit.View.CustomViewGroup>
-
-
-            <com.app.supawit.bcomprojectit.View.CustomViewGroup
-                android:layout_marginLeft="14dp"
-                android:layout_marginRight="14dp"
-                android:id="@+id/viewgroup9"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/viewgroup8"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true">
-
-            </com.app.supawit.bcomprojectit.View.CustomViewGroup>
-
-
-            <com.app.supawit.bcomprojectit.View.CustomViewGroup
-                android:layout_marginLeft="14dp"
-                android:layout_marginRight="14dp"
-                android:id="@+id/viewgroup10"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/viewgroup9"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true">
-
-            </com.app.supawit.bcomprojectit.View.CustomViewGroup>
-
-
-            <com.app.supawit.bcomprojectit.View.CustomViewGroup
-                android:layout_marginLeft="14dp"
-                android:layout_marginRight="14dp"
-                android:id="@+id/viewgroup11"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/viewgroup10"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true">
-
-            </com.app.supawit.bcomprojectit.View.CustomViewGroup>
-
-            <com.app.supawit.bcomprojectit.View.CustomViewGroup
-                android:layout_marginLeft="14dp"
-                android:layout_marginRight="14dp"
-                android:id="@+id/viewgroup12"
+                android:id="@+id/viewgroup21"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/viewgroup11"
@@ -191,13 +52,126 @@
                 android:layout_alignParentStart="true">
             </com.app.supawit.bcomprojectit.View.CustomViewGroup>
 
+
             <com.app.supawit.bcomprojectit.View.CustomViewGroup
                 android:layout_marginLeft="14dp"
                 android:layout_marginRight="14dp"
-                android:id="@+id/viewgroup13"
+                android:id="@+id/viewgroup31"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/viewgroup12"
+                android:layout_below="@+id/viewgroup21"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true">
+            </com.app.supawit.bcomprojectit.View.CustomViewGroup>
+
+
+            <com.app.supawit.bcomprojectit.View.CustomViewGroup
+                android:layout_marginLeft="14dp"
+                android:layout_marginRight="14dp"
+                android:id="@+id/viewgroup41"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/viewgroup31"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true">
+
+            </com.app.supawit.bcomprojectit.View.CustomViewGroup>
+
+            <com.app.supawit.bcomprojectit.View.CustomViewGroup
+                android:layout_marginLeft="14dp"
+                android:layout_marginRight="14dp"
+                android:id="@+id/viewgroup51"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/viewgroup41"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true">
+
+            </com.app.supawit.bcomprojectit.View.CustomViewGroup>
+
+
+            <com.app.supawit.bcomprojectit.View.CustomViewGroup
+                android:layout_marginLeft="14dp"
+                android:layout_marginRight="14dp"
+                android:id="@+id/viewgroup61"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/viewgroup51"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true">
+
+            </com.app.supawit.bcomprojectit.View.CustomViewGroup>
+
+            <com.app.supawit.bcomprojectit.View.CustomViewGroup
+                android:layout_marginLeft="14dp"
+                android:layout_marginRight="14dp"
+                android:id="@+id/viewgroup71"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/viewgroup61"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true">
+
+            </com.app.supawit.bcomprojectit.View.CustomViewGroup>
+
+            <com.app.supawit.bcomprojectit.View.CustomViewGroup
+                android:layout_marginLeft="14dp"
+                android:layout_marginRight="14dp"
+                android:id="@+id/viewgroup81"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/viewgroup71"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true">
+
+            </com.app.supawit.bcomprojectit.View.CustomViewGroup>
+
+
+            <com.app.supawit.bcomprojectit.View.CustomViewGroup
+                android:layout_marginLeft="14dp"
+                android:layout_marginRight="14dp"
+                android:id="@+id/viewgroup91"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/viewgroup81"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true">
+
+            </com.app.supawit.bcomprojectit.View.CustomViewGroup>
+
+
+            <com.app.supawit.bcomprojectit.View.CustomViewGroup
+                android:layout_marginLeft="14dp"
+                android:layout_marginRight="14dp"
+                android:id="@+id/viewgroup101"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/viewgroup91"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true">
+
+            </com.app.supawit.bcomprojectit.View.CustomViewGroup>
+
+
+            <com.app.supawit.bcomprojectit.View.CustomViewGroup
+                android:layout_marginLeft="14dp"
+                android:layout_marginRight="14dp"
+                android:id="@+id/viewgroup111"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/viewgroup101"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true">
+
+            </com.app.supawit.bcomprojectit.View.CustomViewGroup>
+
+            <com.app.supawit.bcomprojectit.View.CustomViewGroup
+                android:layout_marginLeft="14dp"
+                android:layout_marginRight="14dp"
+                android:id="@+id/viewgroup121"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/viewgroup111"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true">
             </com.app.supawit.bcomprojectit.View.CustomViewGroup>
@@ -205,10 +179,10 @@
             <com.app.supawit.bcomprojectit.View.CustomViewGroup
                 android:layout_marginLeft="14dp"
                 android:layout_marginRight="14dp"
-                android:id="@+id/viewgroup14"
+                android:id="@+id/viewgroup131"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/viewgroup13"
+                android:layout_below="@+id/viewgroup121"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true">
             </com.app.supawit.bcomprojectit.View.CustomViewGroup>
@@ -216,10 +190,10 @@
             <com.app.supawit.bcomprojectit.View.CustomViewGroup
                 android:layout_marginLeft="14dp"
                 android:layout_marginRight="14dp"
-                android:id="@+id/viewgroup15"
+                android:id="@+id/viewgroup141"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/viewgroup14"
+                android:layout_below="@+id/viewgroup131"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true">
             </com.app.supawit.bcomprojectit.View.CustomViewGroup>
@@ -227,10 +201,10 @@
             <com.app.supawit.bcomprojectit.View.CustomViewGroup
                 android:layout_marginLeft="14dp"
                 android:layout_marginRight="14dp"
-                android:id="@+id/viewgroup16"
+                android:id="@+id/viewgroup151"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/viewgroup15"
+                android:layout_below="@+id/viewgroup141"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true">
             </com.app.supawit.bcomprojectit.View.CustomViewGroup>
@@ -238,19 +212,165 @@
             <com.app.supawit.bcomprojectit.View.CustomViewGroup
                 android:layout_marginLeft="14dp"
                 android:layout_marginRight="14dp"
-                android:id="@+id/viewgroup17"
+                android:id="@+id/viewgroup161"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/viewgroup16"
+                android:layout_below="@+id/viewgroup151"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true">
             </com.app.supawit.bcomprojectit.View.CustomViewGroup>
+
+            <com.app.supawit.bcomprojectit.View.CustomViewGroup
+                android:layout_marginLeft="14dp"
+                android:layout_marginRight="14dp"
+                android:id="@+id/viewgroup171"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/viewgroup161"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true">
+            </com.app.supawit.bcomprojectit.View.CustomViewGroup>
+
+            <com.app.supawit.bcomprojectit.View.CustomViewGroup
+                android:layout_marginLeft="14dp"
+                android:layout_marginRight="14dp"
+                android:id="@+id/viewgroup181"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/viewgroup171"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true">
+            </com.app.supawit.bcomprojectit.View.CustomViewGroup>
+
+            <com.app.supawit.bcomprojectit.View.CustomViewGroup
+                android:layout_marginLeft="14dp"
+                android:layout_marginRight="14dp"
+                android:id="@+id/viewgroup191"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/viewgroup181"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true">
+            </com.app.supawit.bcomprojectit.View.CustomViewGroup>
+
+            <com.app.supawit.bcomprojectit.View.CustomViewGroup
+                android:layout_marginLeft="14dp"
+                android:layout_marginRight="14dp"
+                android:id="@+id/viewgroup201"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/viewgroup191"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true">
+            </com.app.supawit.bcomprojectit.View.CustomViewGroup>
+
+            <com.app.supawit.bcomprojectit.View.CustomViewGroup
+                android:layout_marginLeft="14dp"
+                android:layout_marginRight="14dp"
+                android:id="@+id/viewgroup211"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/viewgroup201"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true">
+            </com.app.supawit.bcomprojectit.View.CustomViewGroup>
+
+            <com.app.supawit.bcomprojectit.View.CustomViewGroup
+                android:layout_marginLeft="14dp"
+                android:layout_marginRight="14dp"
+                android:id="@+id/viewgroup221"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/viewgroup211"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true">
+            </com.app.supawit.bcomprojectit.View.CustomViewGroup>
+
+            <com.app.supawit.bcomprojectit.View.CustomViewGroup
+                android:layout_marginLeft="14dp"
+                android:layout_marginRight="14dp"
+                android:id="@+id/viewgroup231"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/viewgroup221"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true">
+            </com.app.supawit.bcomprojectit.View.CustomViewGroup>
+
+            <com.app.supawit.bcomprojectit.View.CustomViewGroup
+                android:layout_marginLeft="14dp"
+                android:layout_marginRight="14dp"
+                android:id="@+id/viewgroup241"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/viewgroup231"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true">
+            </com.app.supawit.bcomprojectit.View.CustomViewGroup>
+
+            <com.app.supawit.bcomprojectit.View.CustomViewGroup
+                android:layout_marginLeft="14dp"
+                android:layout_marginRight="14dp"
+                android:id="@+id/viewgroup251"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/viewgroup241"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true">
+            </com.app.supawit.bcomprojectit.View.CustomViewGroup>
+
+            <com.app.supawit.bcomprojectit.View.CustomViewGroup
+                android:layout_marginLeft="14dp"
+                android:layout_marginRight="14dp"
+                android:id="@+id/viewgroup261"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/viewgroup251"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true">
+            </com.app.supawit.bcomprojectit.View.CustomViewGroup>
+
+            <com.app.supawit.bcomprojectit.View.CustomViewGroup
+                android:layout_marginLeft="14dp"
+                android:layout_marginRight="14dp"
+                android:id="@+id/viewgroup271"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/viewgroup261"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true">
+            </com.app.supawit.bcomprojectit.View.CustomViewGroup>
+
+            <com.app.supawit.bcomprojectit.View.CustomViewGroup
+                android:layout_marginLeft="14dp"
+                android:layout_marginRight="14dp"
+                android:id="@+id/viewgroup281"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/viewgroup271"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true">
+            </com.app.supawit.bcomprojectit.View.CustomViewGroup>
+
+            <com.app.supawit.bcomprojectit.View.CustomViewGroup
+                android:layout_marginLeft="14dp"
+                android:layout_marginRight="14dp"
+                android:id="@+id/viewgroup291"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/viewgroup281"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true">
+            </com.app.supawit.bcomprojectit.View.CustomViewGroup>
+
+
 
 
         </RelativeLayout>
 
 
     </ScrollView>
+
 
     <android.support.design.widget.FloatingActionButton
         android:layout_width="wrap_content"

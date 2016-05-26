@@ -1,0 +1,102 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    tools:context="com.app.supawit.bcomprojectit.Fragment.QSCFragment">
+
+<!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:paddingTop="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="14dp"
+            android:text="1234"
+            android:textStyle="bold"
+            android:textSize="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtqsc1"/>
+
+
+        <RelativeLayout
+            android:id="@+id/relativebtnqsc1"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/bgbtn">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Quanlity"
+                android:textStyle="bold"
+                android:textColor="#FFF"
+                android:layout_centerInParent="true"/>
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativebtnqsc2"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/bgbtn">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Services"
+                android:textStyle="bold"
+                android:textColor="#FFF"
+                android:layout_centerInParent="true"/>
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativebtnqsc3"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/bgbtn">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cleanliness"
+                android:textStyle="bold"
+                android:textColor="#FFF"
+                android:layout_centerInParent="true"/>
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="25dp"
+        android:id="@+id/fab"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        app:backgroundTint="#F2819A"
+        android:layout_alignParentRight="true"
+        android:src="@android:drawable/ic_menu_revert" />
+
+</RelativeLayout>
+

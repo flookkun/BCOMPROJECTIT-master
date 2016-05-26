@@ -9,7 +9,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
-import android.widget.ExpandableListView;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -27,14 +26,15 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-
 /**
  * A simple {@link Fragment} subclass.
  */
-public class MainFragment extends Fragment{
+public class MainserviceFragment extends Fragment {
 
 
-    ExpandableListView expListView;
+    public MainserviceFragment() {
+        // Required empty public constructor
+    }
 
     List<String> groupList;
 
@@ -54,14 +54,15 @@ public class MainFragment extends Fragment{
             ,viewGroup14
             ,viewGroup15
             ,viewGroup16
-            ,viewGroup17;
+            ,viewGroup17
+            ,viewGroup18;
 
-    TextView az
+    TextView az,score
             ,date1,date2,date3,date4
             ,date5,date6,date7,date8
             ,date9,date10,date11,date12
             ,date13,date14,date15,date16
-            ,date17;
+            ,date17,date18;
 
 
     int ii = 0;
@@ -70,7 +71,7 @@ public class MainFragment extends Fragment{
             ,vg8 = 0,vg9 = 0,vg10 = 0
             ,vg11 = 0,vg12 = 0,vg13 = 0
             ,vg14 = 0,vg15 = 0,vg16 = 0
-            ,vg17 = 0;
+            ,vg17 = 0,vg18 = 0;
 
 
     int vb1 = 0,vb2 = 0,vb3 = 0,vb4 = 0
@@ -78,9 +79,10 @@ public class MainFragment extends Fragment{
             ,vb8 = 0,vb9 = 0,vb10 = 0
             ,vb11 = 0,vb12 = 0,vb13 = 0
             ,vb14 = 0,vb15 = 0,vb16 = 0
-            ,vb17 = 0;
+            ,vb17 = 0,vb18 = 0;
 
-    EditText ed1,ed2,ed3,ed4,ed5,ed6,ed7,ed8,ed9,ed10,ed11,ed12,ed13,ed14,ed15,ed16,ed17;
+
+    EditText ed1,ed2,ed3,ed4,ed5,ed6,ed7,ed8,ed9,ed10,ed11,ed12,ed13,ed14,ed15,ed16,ed17,ed18;
 
 
     ConnectionSQL connectionSQL;
@@ -89,67 +91,76 @@ public class MainFragment extends Fragment{
     String whcode;
 
 
-
     @Override
-    public View onCreateView (LayoutInflater inflater, ViewGroup container, final Bundle savedInstanceState) {
-
-        //createGroupList();
-        //createCollection();
-        getActivity().setTitle("Quanlity");
-        final RadioGroup rg1,rg2,rg3,rg4,rg5,rg6,rg7,rg8,rg9,rg10,rg11,rg12,rg13,rg14,rg15,rg16,rg17;
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        final RadioGroup rg1,rg2,rg3,rg4,rg5,rg6,rg7,rg8,rg9,rg10,rg11,rg12,rg13,rg14,rg15,rg16,rg17,rg18;
         final Bundle bundle  = this.getArguments();
-        final String head[] = new String[100];
         final Integer chk = bundle.getInt("chk");
-        final View v = inflater.inflate(R.layout.fragment_main,null);
+        final String a = bundle.getString("Key");
+        final String area = bundle.getString("area");
+        final String abbname = bundle.getString("wh");
+        final String head[] = new String[100];
+        View v = inflater.inflate(R.layout.fragment_mainservice,null);
 
+        //Toast.makeText(getContext(),"chk = "+chk,Toast.LENGTH_SHORT).show();
 
-        az = (TextView) v.findViewById(R.id.txtscore);
+        score = (TextView) v.findViewById(R.id.txtscore);
 
+        score.setText(ii+"/18");
 
-        az.setText(ii+"/17");
+        getActivity().setTitle("Services");
+
+        TextView txt = (TextView) v.findViewById(R.id.txtqsc2);
+
+        txt.setText(a);
+
 
         if(chk==1){
 
             /// set ViewGroup ///
 
 
-            viewGroup1 = (CustomViewGroup) v.findViewById(R.id.viewgroup1);
-            viewGroup2 = (CustomViewGroup) v.findViewById(R.id.viewgroup2);
-            viewGroup3 = (CustomViewGroup) v.findViewById(R.id.viewgroup3);
-            viewGroup4 = (CustomViewGroup) v.findViewById(R.id.viewgroup4);
-            viewGroup5 = (CustomViewGroup) v.findViewById(R.id.viewgroup5);
-            viewGroup6 = (CustomViewGroup) v.findViewById(R.id.viewgroup6);
-            viewGroup7 = (CustomViewGroup) v.findViewById(R.id.viewgroup7);
-            viewGroup8 = (CustomViewGroup) v.findViewById(R.id.viewgroup8);
-            viewGroup9 = (CustomViewGroup) v.findViewById(R.id.viewgroup9);
-            viewGroup10 = (CustomViewGroup) v.findViewById(R.id.viewgroup10);
-            viewGroup11 = (CustomViewGroup) v.findViewById(R.id.viewgroup11);
-            viewGroup12 = (CustomViewGroup) v.findViewById(R.id.viewgroup12);
-            viewGroup13 = (CustomViewGroup) v.findViewById(R.id.viewgroup13);
-            viewGroup14 = (CustomViewGroup) v.findViewById(R.id.viewgroup14);
-            viewGroup15 = (CustomViewGroup) v.findViewById(R.id.viewgroup15);
-            viewGroup16 = (CustomViewGroup) v.findViewById(R.id.viewgroup16);
-            viewGroup17 = (CustomViewGroup) v.findViewById(R.id.viewgroup17);
+            viewGroup1 = (CustomViewGroup) v.findViewById(R.id.viewgroup11);
+            viewGroup2 = (CustomViewGroup) v.findViewById(R.id.viewgroup21);
+            viewGroup3 = (CustomViewGroup) v.findViewById(R.id.viewgroup31);
+            viewGroup4 = (CustomViewGroup) v.findViewById(R.id.viewgroup41);
+            viewGroup5 = (CustomViewGroup) v.findViewById(R.id.viewgroup51);
+            viewGroup6 = (CustomViewGroup) v.findViewById(R.id.viewgroup61);
+            viewGroup7 = (CustomViewGroup) v.findViewById(R.id.viewgroup71);
+            viewGroup8 = (CustomViewGroup) v.findViewById(R.id.viewgroup81);
+            viewGroup9 = (CustomViewGroup) v.findViewById(R.id.viewgroup91);
+            viewGroup10 = (CustomViewGroup) v.findViewById(R.id.viewgroup101);
+            viewGroup11 = (CustomViewGroup) v.findViewById(R.id.viewgroup111);
+            viewGroup12 = (CustomViewGroup) v.findViewById(R.id.viewgroup121);
+            viewGroup13 = (CustomViewGroup) v.findViewById(R.id.viewgroup131);
+            viewGroup14 = (CustomViewGroup) v.findViewById(R.id.viewgroup141);
+            viewGroup15 = (CustomViewGroup) v.findViewById(R.id.viewgroup151);
+            viewGroup16 = (CustomViewGroup) v.findViewById(R.id.viewgroup161);
+            viewGroup17 = (CustomViewGroup) v.findViewById(R.id.viewgroup171);
+            viewGroup18 = (CustomViewGroup) v.findViewById(R.id.viewgroup181);
 
             /// set text ///
 
-            head[0] = viewGroup1.settxt("1. สินค้า 30  อันดับขายดี ( Top 30) มีครบ");
-            head[1] = viewGroup2.settxt("2. สินค้าครบสี เบอร์ (ที่ไม่ขาดจากบริษัท)");
-            head[2] = viewGroup3.settxt("3. จัดเรียงแบบ FIFO, Fronting, Facing");
-            head[3] = viewGroup4.settxt("4. การจัดเรียงสินค้าเป็น series และ function");
-            head[4] = viewGroup5.settxt("5. ตำแหน่งการจัดเรียงสินค้าตาม plan-o-gram ");
-            head[5] = viewGroup6.settxt("6. ไม่มีสินค้า Expired หรือ Nearly Expired");
-            head[6] = viewGroup7.settxt("7. ความสะอาดของตัวสินค้าที่วางบนชั้นโชว์");
-            head[7] = viewGroup8.settxt("8. ความสะอาด/ปริมาณ ของบรรจุภัณฑ์และเนื้อสินค้า tester ");
-            head[8] = viewGroup9.settxt("9. ป้ายสติ๊กเกอร์สินค้า, บรรจุภัณฑ์ไม่ซีด ไม่หลุด");
-            head[9] = viewGroup10.settxt("10. ปาดหน้าลิป tester");
-            head[10] = viewGroup11.settxt("11. พัฟสะอาด ");
-            head[11] = viewGroup12.settxt("12. tester แป้ง,ปัดแก้ม,อายแชโดว์ เปลี่ยนใหม่ตามเกณฑ์ที่กำหนด");
-            head[12] = viewGroup13.settxt("13. ติดสติ๊กเกอร์ tester ครบ ถูกต้อง เรียบร้อย");
-            head[13] = viewGroup14.settxt("14. ความถูกต้องของป้ายราคาปกติและป้ายโปรโมชั่น");
-            head[14] = viewGroup15.settxt("15. การจัดวางป้ายราคาและป้ายอื่นๆ ");
-            head[15] = viewGroup16.settxt("16. การจัดวางแท่น tester และรางป้าย ");
-            head[16] = viewGroup17.settxt("17. POP /Standy /Banner เป็นระเบียบ ถูกต้องตามตำแหน่ง ");
+            head[0] = viewGroup1.settxt("1. กล่าวทักทายลูกค้า:จริงใจ ยิ้ม สบตา");
+            head[1] = viewGroup2.settxt("2. เปิดการสนทนา : เพื่อเข้าหาลูกค้า");
+            head[2] = viewGroup3.settxt("3. แนะนำผลิตภัณฑ์: เชียร์จุดขาย โชว์จุดเด่น");
+            head[3] = viewGroup4.settxt("4. การเพิ่มยอดขาย: Plus Sales");
+            head[4] = viewGroup5.settxt("5. ปิดการขาย: เชิญลูกค้ามาที่แคชเชียร์ ");
+            head[5] = viewGroup6.settxt("6. ขอบคุณลูกค้า: พร้อมเชื้อเชิญให้กลับมาใช้บริการอีก");
+            head[6] = viewGroup7.settxt("7. ความพร้อมของอุปกรณ์การขายและแต่งหน้า");
+            head[7] = viewGroup8.settxt("8. โบร์ชัวร์สินค้า / Leaflet / Newsletter ที่ต้องมีในเวลานั้น ");
+            head[8] = viewGroup9.settxt("9. บัตรสมาชิกและใบสมัครสมาชิก");
+            head[9] = viewGroup10.settxt("10. ข้อมูลสมาชิกในใบสมัครสมาชิก มีครบถ้วน ");
+            head[10] = viewGroup11.settxt("11. การแต่งหน้าของพนักงานตาม trend , สวยงาม ");
+            head[11] = viewGroup12.settxt("12. ทรงผมของพนักงานเรียบร้อย ถูกระเบียบ ไม่รุงรัง");
+            head[12] = viewGroup13.settxt("13. การแต่งกายของพนักงาน สะอาด ,เรียบร้อย ถูกระเบียบ");
+            head[13] = viewGroup14.settxt("14. บุคลิกภาพของพนักงานเหมาะสม");
+            head[14] = viewGroup15.settxt("15. ใช้คำพูดกับลูกค้าเหมาะสม  ");
+            head[15] = viewGroup16.settxt("16. กิริยา มารยาทของพนักงานสุภาพ ไม่ส่งเสียงดัง ไม่เล่นกัน ");
+            head[16] = viewGroup17.settxt("17. ตอบรับความต้องการของลูกค้าในทันที ");
+            head[17] = viewGroup18.settxt("18. พนักงานกระตือรือร้นในการทำงาน ");
 
             /// set radiobutton ///
 
@@ -170,6 +181,7 @@ public class MainFragment extends Fragment{
             rg15 = (RadioGroup) viewGroup15.findViewById(R.id.customradiogroup);
             rg16 = (RadioGroup) viewGroup16.findViewById(R.id.customradiogroup);
             rg17 = (RadioGroup) viewGroup17.findViewById(R.id.customradiogroup);
+            rg18 = (RadioGroup) viewGroup18.findViewById(R.id.customradiogroup);
 
 
             /// set edittext ///
@@ -192,7 +204,7 @@ public class MainFragment extends Fragment{
             ed15 = (EditText) viewGroup15.findViewById(R.id.customedt);
             ed16 = (EditText) viewGroup16.findViewById(R.id.customedt);
             ed17 = (EditText) viewGroup17.findViewById(R.id.customedt);
-
+            ed18 = (EditText) viewGroup18.findViewById(R.id.customedt);
 
 
             //set textview date///
@@ -214,7 +226,7 @@ public class MainFragment extends Fragment{
             date15 = (TextView) viewGroup15.findViewById(R.id.setdate);
             date16 = (TextView) viewGroup16.findViewById(R.id.setdate);
             date17 = (TextView) viewGroup17.findViewById(R.id.setdate);
-
+            date18 = (TextView) viewGroup18.findViewById(R.id.setdate);
 
             /// set Onclick txt ///
 
@@ -322,11 +334,19 @@ public class MainFragment extends Fragment{
                     viewGroup17.settime();
                 }
             });
+            date18.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    viewGroup18.settime();
+                }
+            });
+
 
 
             /// setOncheck ///
 
-            //// Quanlity ////
+
+            //// Services ////
 
             rg1.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
                 @Override
@@ -346,10 +366,10 @@ public class MainFragment extends Fragment{
                             break;
                     }
 
-                    az.setText(ii+vg1+vg2+vg3+vg4
+                    score.setText(ii+vg1+vg2+vg3+vg4
                             +vg5+vg6+vg7+vg8+
                             vg9+vg10+vg11+vg12+
-                            vg13+vg14+vg15+vg16+vg17+"/17");
+                            vg13+vg14+vg15+vg16+vg17+vg18+"/18");
 
                 }
 
@@ -378,11 +398,11 @@ public class MainFragment extends Fragment{
                             //az.setText("2/30");
                             break;
                     }
-                    az.setText(ii+vg1+vg2+vg3+vg4
+                    score.setText(ii+vg1+vg2+vg3+vg4
                             +vg5+vg6+vg7+vg8+
                             vg9+vg10+vg11+vg12+
-                            vg13+vg14+vg15+vg16+vg17+"/17");
-            }
+                            vg13+vg14+vg15+vg16+vg17+vg18+"/18");
+                }
             });
 
             rg3.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -402,10 +422,10 @@ public class MainFragment extends Fragment{
                             //ea3 = ed3.getText().toString();
                             break;
                     }
-                    az.setText(ii+vg1+vg2+vg3+vg4
+                    score.setText(ii+vg1+vg2+vg3+vg4
                             +vg5+vg6+vg7+vg8+
                             vg9+vg10+vg11+vg12+
-                            vg13+vg14+vg15+vg16+vg17+"/17");
+                            vg13+vg14+vg15+vg16+vg17+vg18+"/18");
                 }
             });
 
@@ -429,10 +449,10 @@ public class MainFragment extends Fragment{
                             //ea4 = ed4.getText().toString();
                             break;
                     }
-                    az.setText(ii+vg1+vg2+vg3+vg4
+                    score.setText(ii+vg1+vg2+vg3+vg4
                             +vg5+vg6+vg7+vg8+
                             vg9+vg10+vg11+vg12+
-                            vg13+vg14+vg15+vg16+vg17+"/17");
+                            vg13+vg14+vg15+vg16+vg17+vg18+"/18");
                 }
             });
 
@@ -454,10 +474,10 @@ public class MainFragment extends Fragment{
                             break;
                     }
 
-                    az.setText(ii+vg1+vg2+vg3+vg4
+                    score.setText(ii+vg1+vg2+vg3+vg4
                             +vg5+vg6+vg7+vg8+
                             vg9+vg10+vg11+vg12+
-                            vg13+vg14+vg15+vg16+vg17+"/17");
+                            vg13+vg14+vg15+vg16+vg17+vg18+"/18");
 
                 }
 
@@ -482,10 +502,10 @@ public class MainFragment extends Fragment{
                             break;
                     }
 
-                    az.setText(ii+vg1+vg2+vg3+vg4
+                    score.setText(ii+vg1+vg2+vg3+vg4
                             +vg5+vg6+vg7+vg8+
                             vg9+vg10+vg11+vg12+
-                            vg13+vg14+vg15+vg16+vg17+"/17");
+                            vg13+vg14+vg15+vg16+vg17+vg18+"/18");
 
                 }
 
@@ -510,10 +530,10 @@ public class MainFragment extends Fragment{
                             break;
                     }
 
-                    az.setText(ii+vg1+vg2+vg3+vg4
+                    score.setText(ii+vg1+vg2+vg3+vg4
                             +vg5+vg6+vg7+vg8+
                             vg9+vg10+vg11+vg12+
-                            vg13+vg14+vg15+vg16+vg17+"/17");
+                            vg13+vg14+vg15+vg16+vg17+vg18+"/18");
 
                 }
 
@@ -538,10 +558,10 @@ public class MainFragment extends Fragment{
                             break;
                     }
 
-                    az.setText(ii+vg1+vg2+vg3+vg4
+                    score.setText(ii+vg1+vg2+vg3+vg4
                             +vg5+vg6+vg7+vg8+
                             vg9+vg10+vg11+vg12+
-                            vg13+vg14+vg15+vg16+vg17+"/17");
+                            vg13+vg14+vg15+vg16+vg17+vg18+"/18");
 
                 }
 
@@ -566,11 +586,10 @@ public class MainFragment extends Fragment{
                             break;
                     }
 
-                    az.setText(ii+vg1+vg2+vg3+vg4
+                    score.setText(ii+vg1+vg2+vg3+vg4
                             +vg5+vg6+vg7+vg8+
                             vg9+vg10+vg11+vg12+
-                            vg13+vg14+vg15+vg16+vg17+"/17");
-
+                            vg13+vg14+vg15+vg16+vg17+vg18+"/18");
                 }
 
 
@@ -594,10 +613,10 @@ public class MainFragment extends Fragment{
                             break;
                     }
 
-                    az.setText(ii+vg1+vg2+vg3+vg4
+                    score.setText(ii+vg1+vg2+vg3+vg4
                             +vg5+vg6+vg7+vg8+
                             vg9+vg10+vg11+vg12+
-                            vg13+vg14+vg15+vg16+vg17+"/17");
+                            vg13+vg14+vg15+vg16+vg17+vg18+"/18");
 
                 }
 
@@ -623,10 +642,10 @@ public class MainFragment extends Fragment{
                             break;
                     }
 
-                    az.setText(ii+vg1+vg2+vg3+vg4
+                    score.setText(ii+vg1+vg2+vg3+vg4
                             +vg5+vg6+vg7+vg8+
                             vg9+vg10+vg11+vg12+
-                            vg13+vg14+vg15+vg16+vg17+"/17");
+                            vg13+vg14+vg15+vg16+vg17+vg18+"/18");
 
                 }
 
@@ -651,10 +670,10 @@ public class MainFragment extends Fragment{
                             break;
                     }
 
-                    az.setText(ii+vg1+vg2+vg3+vg4
+                    score.setText(ii+vg1+vg2+vg3+vg4
                             +vg5+vg6+vg7+vg8+
                             vg9+vg10+vg11+vg12+
-                            vg13+vg14+vg15+vg16+vg17+"/17");
+                            vg13+vg14+vg15+vg16+vg17+vg18+"/18");
 
                 }
 
@@ -679,10 +698,10 @@ public class MainFragment extends Fragment{
                             break;
                     }
 
-                    az.setText(ii+vg1+vg2+vg3+vg4
+                    score.setText(ii+vg1+vg2+vg3+vg4
                             +vg5+vg6+vg7+vg8+
                             vg9+vg10+vg11+vg12+
-                            vg13+vg14+vg15+vg16+vg17+"/17");
+                            vg13+vg14+vg15+vg16+vg17+vg18+"/18");
 
                 }
 
@@ -708,10 +727,10 @@ public class MainFragment extends Fragment{
                             break;
                     }
 
-                    az.setText(ii+vg1+vg2+vg3+vg4
+                    score.setText(ii+vg1+vg2+vg3+vg4
                             +vg5+vg6+vg7+vg8+
                             vg9+vg10+vg11+vg12+
-                            vg13+vg14+vg15+vg16+vg17+"/17");
+                            vg13+vg14+vg15+vg16+vg17+vg18+"/18");
 
                 }
 
@@ -736,10 +755,10 @@ public class MainFragment extends Fragment{
                             break;
                     }
 
-                    az.setText(ii+vg1+vg2+vg3+vg4
+                    score.setText(ii+vg1+vg2+vg3+vg4
                             +vg5+vg6+vg7+vg8+
                             vg9+vg10+vg11+vg12+
-                            vg13+vg14+vg15+vg16+vg17+"/17");
+                            vg13+vg14+vg15+vg16+vg17+vg18+"/18");
 
                 }
 
@@ -764,10 +783,10 @@ public class MainFragment extends Fragment{
                             break;
                     }
 
-                    az.setText(ii+vg1+vg2+vg3+vg4
+                    score.setText(ii+vg1+vg2+vg3+vg4
                             +vg5+vg6+vg7+vg8+
                             vg9+vg10+vg11+vg12+
-                            vg13+vg14+vg15+vg16+vg17+"/17");
+                            vg13+vg14+vg15+vg16+vg17+vg18+"/18");
 
                 }
 
@@ -792,31 +811,50 @@ public class MainFragment extends Fragment{
                             break;
                     }
 
-                    az.setText(ii+vg1+vg2+vg3+vg4
+                    score.setText(ii+vg1+vg2+vg3+vg4
                             +vg5+vg6+vg7+vg8+
                             vg9+vg10+vg11+vg12+
-                            vg13+vg14+vg15+vg16+vg17+"/17");
+                            vg13+vg14+vg15+vg16+vg17+vg18+"/18");
 
                 }
 
 
             });
 
-            ////// Quanlity End/////
+            rg18.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(RadioGroup group, int checkedId) {
+                    switch (checkedId)
+                    {
+                        case R.id.customrb1 :
+                            vg18 = viewGroup18.setvaluerb(R.id.customrb1);
+                            //Toast.makeText(getContext(),"checkedId",Toast.LENGTH_SHORT).show();
+                            viewGroup18.setinvisble();
+                            break;
+                        case R.id.customrb2 :
+                            vg18 = viewGroup18.setvaluerb(R.id.customrb2);
+                            //Toast.makeText(getContext(),"GG",Toast.LENGTH_SHORT).show();
+                            viewGroup18.setvisble();
+                            //ea1 = ed1.getText().toString();
+                            break;
+                    }
+
+                    score.setText(ii+vg1+vg2+vg3+vg4
+                            +vg5+vg6+vg7+vg8+
+                            vg9+vg10+vg11+vg12+
+                            vg13+vg14+vg15+vg16+vg17+vg18+"/18");
+
+                }
+
+
+            });
+
+            ////// Services End/////
 
 
 
 
             /////////////////////////////////////////////////////////////////////////////////////////////
-
-            final TextView ax = (TextView) v.findViewById(R.id.txttest1);
-            final String a = bundle.getString("Key");
-            final String area = bundle.getString("area");
-            final String abbname = bundle.getString("wh");
-
-
-
-            ax.setText(a);
 
 
             /// Link DB //
@@ -843,13 +881,13 @@ public class MainFragment extends Fragment{
             fab.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    int max = 17;
+                    int max = 18;
 
                     int[] allscore = new int[1];
                     allscore[0] = max - (ii+vg1+vg2+vg3+vg4
                             +vg5+vg6+vg7+vg8+
                             vg9+vg10+vg11+vg12+
-                            vg13+vg14+vg15+vg16+vg17);
+                            vg13+vg14+vg15+vg16+vg17+vg18);
 
                     String text[] = new String[64];
 
@@ -870,6 +908,7 @@ public class MainFragment extends Fragment{
                     text[14] = ed15.getText().toString();
                     text[15] = ed16.getText().toString();
                     text[16] = ed17.getText().toString();
+                    text[17] = ed18.getText().toString();
 
                     Integer point[] = new Integer[64];
                     point[0] = vg1;
@@ -889,6 +928,7 @@ public class MainFragment extends Fragment{
                     point[14] = vg15;
                     point[15] = vg16;
                     point[16] = vg17;
+                    point[17] = vg18;
 
 
                     String dd[] = new String[64];
@@ -909,24 +949,25 @@ public class MainFragment extends Fragment{
                     dd[14] = date15.getText().toString();
                     dd[15] = date16.getText().toString();
                     dd[16] = date17.getText().toString();
+                    dd[17] = date18.getText().toString();
 
 
                     try {
                         connectionSQL = new ConnectionSQL();
                         Connection con = connectionSQL.CONN();
-                        for (int i = 0 ; i < 17 ;i++)
+                        for (int i = 0 ; i < 18 ;i++)
                         {
                             stmt = con.createStatement();
-                            String commands = "insert MAS_PJ " +
+                            String commands = "insert MAS_PJ_S " +
                                     //"select '"+a+"','"+ head[i]+"','"+area+"',GETDATE(),'"+dd[i]+"','"+text[i]+"','"+ point[i] +"','"+az.getText().toString()+"'";
-                                    " VALUES ('"+a+"','"+head[i]+"','"+area+"',CONVERT(VARCHAR(10),GETDATE(),110),'"+dd[i]+"','"+text[i]+"','"+ point[i] +"','"+az.getText().toString()+"',CONVERT(VARCHAR(10),GETDATE(),110))";
+                                    " VALUES ('"+a+"','"+head[i]+"','"+area+"',CONVERT(VARCHAR(10),GETDATE(),110),'"+dd[i]+"','"+text[i]+"','"+ point[i] +"','"+score.getText().toString()+"',CONVERT(VARCHAR(10),GETDATE(),110))";
                             PreparedStatement preStmt = con.prepareStatement(commands);
                             preStmt.executeUpdate();
                         }
                         stmt = con.createStatement();
-                        String commands = "insert MAS_PJ_REPORT " +
+                        String commands = "insert MAS_PJ_REPORT_S " +
                                 //"select '"+a+"','"+ head[i]+"','"+area+"',GETDATE(),'"+dd[i]+"','"+text[i]+"','"+ point[i] +"','"+az.getText().toString()+"'";
-                                " VALUES ('"+ whcode +"','"+a+"','"+area+"',CONVERT(VARCHAR(10),GETDATE(),110),'"+az.getText().toString()+"','"+allscore[0]+"')";
+                                " VALUES ('"+ whcode +"','"+a+"','"+area+"',CONVERT(VARCHAR(10),GETDATE(),110),'"+score.getText().toString()+"','"+allscore[0]+"')";
                         PreparedStatement preStmt = con.prepareStatement(commands);
                         preStmt.executeUpdate();
                         Toast.makeText(getActivity(),"บันทึกสำเร็จ",Toast.LENGTH_SHORT).show();
@@ -949,23 +990,9 @@ public class MainFragment extends Fragment{
                 }
             });
 
-        }
-
-
-
-
-        else if (chk == 0){
-
-
+        } else if (chk == 0)
+        {
             ArrayList<String> list1 = null,list2 = null,list3 = null,list4 = null;
-            az = (TextView) v.findViewById(R.id.txtscore);
-            final TextView ax = (TextView) v.findViewById(R.id.txttest1);
-            final String a = bundle.getString("Key");
-            final String area = bundle.getString("area");
-            final String abbname = bundle.getString("wh");
-
-
-            ax.setText(a);
             String olddata;
             String oldedittext;
             String olddate;
@@ -978,7 +1005,7 @@ public class MainFragment extends Fragment{
                 connectionSQL = new ConnectionSQL();
                 Connection con = connectionSQL.CONN();
                 stmt = con.createStatement();
-                String query = "select * from mas_pj where DOC_NUMBER = '"+a+"'";
+                String query = "select * from mas_pj_s where DOC_NUMBER = '"+a+"'";
 
                 list1 = new ArrayList<>();
                 list2 = new ArrayList<>();
@@ -1007,23 +1034,25 @@ public class MainFragment extends Fragment{
             /// set ViewGroup ///
 
 
-            viewGroup1 = (CustomViewGroup) v.findViewById(R.id.viewgroup1);
-            viewGroup2 = (CustomViewGroup) v.findViewById(R.id.viewgroup2);
-            viewGroup3 = (CustomViewGroup) v.findViewById(R.id.viewgroup3);
-            viewGroup4 = (CustomViewGroup) v.findViewById(R.id.viewgroup4);
-            viewGroup5 = (CustomViewGroup) v.findViewById(R.id.viewgroup5);
-            viewGroup6 = (CustomViewGroup) v.findViewById(R.id.viewgroup6);
-            viewGroup7 = (CustomViewGroup) v.findViewById(R.id.viewgroup7);
-            viewGroup8 = (CustomViewGroup) v.findViewById(R.id.viewgroup8);
-            viewGroup9 = (CustomViewGroup) v.findViewById(R.id.viewgroup9);
-            viewGroup10 = (CustomViewGroup) v.findViewById(R.id.viewgroup10);
-            viewGroup11 = (CustomViewGroup) v.findViewById(R.id.viewgroup11);
-            viewGroup12 = (CustomViewGroup) v.findViewById(R.id.viewgroup12);
-            viewGroup13 = (CustomViewGroup) v.findViewById(R.id.viewgroup13);
-            viewGroup14 = (CustomViewGroup) v.findViewById(R.id.viewgroup14);
-            viewGroup15 = (CustomViewGroup) v.findViewById(R.id.viewgroup15);
-            viewGroup16 = (CustomViewGroup) v.findViewById(R.id.viewgroup16);
-            viewGroup17 = (CustomViewGroup) v.findViewById(R.id.viewgroup17);
+            viewGroup1 = (CustomViewGroup) v.findViewById(R.id.viewgroup11);
+            viewGroup2 = (CustomViewGroup) v.findViewById(R.id.viewgroup21);
+            viewGroup3 = (CustomViewGroup) v.findViewById(R.id.viewgroup31);
+            viewGroup4 = (CustomViewGroup) v.findViewById(R.id.viewgroup41);
+            viewGroup5 = (CustomViewGroup) v.findViewById(R.id.viewgroup51);
+            viewGroup6 = (CustomViewGroup) v.findViewById(R.id.viewgroup61);
+            viewGroup7 = (CustomViewGroup) v.findViewById(R.id.viewgroup71);
+            viewGroup8 = (CustomViewGroup) v.findViewById(R.id.viewgroup81);
+            viewGroup9 = (CustomViewGroup) v.findViewById(R.id.viewgroup91);
+            viewGroup10 = (CustomViewGroup) v.findViewById(R.id.viewgroup101);
+            viewGroup11 = (CustomViewGroup) v.findViewById(R.id.viewgroup111);
+            viewGroup12 = (CustomViewGroup) v.findViewById(R.id.viewgroup121);
+            viewGroup13 = (CustomViewGroup) v.findViewById(R.id.viewgroup131);
+            viewGroup14 = (CustomViewGroup) v.findViewById(R.id.viewgroup141);
+            viewGroup15 = (CustomViewGroup) v.findViewById(R.id.viewgroup151);
+            viewGroup16 = (CustomViewGroup) v.findViewById(R.id.viewgroup161);
+            viewGroup17 = (CustomViewGroup) v.findViewById(R.id.viewgroup171);
+            viewGroup18 = (CustomViewGroup) v.findViewById(R.id.viewgroup181);
+
 
 
 
@@ -1046,7 +1075,7 @@ public class MainFragment extends Fragment{
             rg15 = (RadioGroup) viewGroup15.findViewById(R.id.customradiogroup);
             rg16 = (RadioGroup) viewGroup16.findViewById(R.id.customradiogroup);
             rg17 = (RadioGroup) viewGroup17.findViewById(R.id.customradiogroup);
-
+            rg18 = (RadioGroup) viewGroup18.findViewById(R.id.customradiogroup);
 
             /// set edittext ///
 
@@ -1068,7 +1097,7 @@ public class MainFragment extends Fragment{
             ed15 = (EditText) viewGroup15.findViewById(R.id.customedt);
             ed16 = (EditText) viewGroup16.findViewById(R.id.customedt);
             ed17 = (EditText) viewGroup17.findViewById(R.id.customedt);
-
+            ed18 = (EditText) viewGroup18.findViewById(R.id.customedt);
 
 
             //set textview date///
@@ -1090,7 +1119,7 @@ public class MainFragment extends Fragment{
             date15 = (TextView) viewGroup15.findViewById(R.id.setdate);
             date16 = (TextView) viewGroup16.findViewById(R.id.setdate);
             date17 = (TextView) viewGroup17.findViewById(R.id.setdate);
-
+            date18 = (TextView) viewGroup18.findViewById(R.id.setdate);
 
             /// set Onclick txt ///
 
@@ -1198,7 +1227,12 @@ public class MainFragment extends Fragment{
                     viewGroup17.settime();
                 }
             });
-
+            date18.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    viewGroup18.settime();
+                }
+            });
 
 
             test = list1.toArray(new String[list1.size()]);
@@ -1226,6 +1260,7 @@ public class MainFragment extends Fragment{
             viewGroup15.settxt(oldh[14]);
             viewGroup16.settxt(oldh[15]);
             viewGroup17.settxt(oldh[16]);
+            viewGroup18.settxt(oldh[17]);
 
 
 
@@ -1247,7 +1282,7 @@ public class MainFragment extends Fragment{
             vb15 = viewGroup15.setcheckrb(test[14]);
             vb16 = viewGroup16.setcheckrb(test[15]);
             vb17 = viewGroup17.setcheckrb(test[16]);
-
+            vb18 = viewGroup18.setcheckrb(test[17]);
 
 
             viewGroup1.setEdt(oldedit[0]);
@@ -1267,6 +1302,7 @@ public class MainFragment extends Fragment{
             viewGroup15.setEdt(oldedit[14]);
             viewGroup16.setEdt(oldedit[15]);
             viewGroup17.setEdt(oldedit[16]);
+            viewGroup18.setEdt(oldedit[17]);
 
 
             viewGroup1.setDate(olddt[0]);
@@ -1286,13 +1322,14 @@ public class MainFragment extends Fragment{
             viewGroup15.setDate(olddt[14]);
             viewGroup16.setDate(olddt[15]);
             viewGroup17.setDate(olddt[16]);
+            viewGroup18.setDate(olddt[17]);
 
 
 
-            az.setText(ii+vb1+vb2+vb3+vb4+
+            score.setText(ii+vb1+vb2+vb3+vb4+
                     vb5+vb6+vb7+vb8+
                     vb9+vb10+vb11+vb12+
-                    vb13+vb14+vb15+vb16+vb17+"/17");
+                    vb13+vb14+vb15+vb16+vb17+vb18+"/18");
 
 
 
@@ -1317,10 +1354,10 @@ public class MainFragment extends Fragment{
                             break;
                     }
 
-                    az.setText(ii+vb1+vb2+vb3+vb4+
+                    score.setText(ii+vb1+vb2+vb3+vb4+
                             vb5+vb6+vb7+vb8+
                             vb9+vb10+vb11+vb12+
-                            vb13+vb14+vb15+vb16+vb17+"/17");
+                            vb13+vb14+vb15+vb16+vb17+vb18+"/18");
 
                 }
 
@@ -1349,10 +1386,10 @@ public class MainFragment extends Fragment{
                             //az.setText("2/30");
                             break;
                     }
-                    az.setText(ii+vb1+vb2+vb3+vb4+
+                    score.setText(ii+vb1+vb2+vb3+vb4+
                             vb5+vb6+vb7+vb8+
                             vb9+vb10+vb11+vb12+
-                            vb13+vb14+vb15+vb16+vb17+"/17");
+                            vb13+vb14+vb15+vb16+vb17+vb18+"/18");
                 }
             });
 
@@ -1373,10 +1410,10 @@ public class MainFragment extends Fragment{
                             //ea3 = ed3.getText().toString();
                             break;
                     }
-                    az.setText(ii+vb1+vb2+vb3+vb4+
+                    score.setText(ii+vb1+vb2+vb3+vb4+
                             vb5+vb6+vb7+vb8+
                             vb9+vb10+vb11+vb12+
-                            vb13+vb14+vb15+vb16+vb17+"/17");
+                            vb13+vb14+vb15+vb16+vb17+vb18+"/18");
                 }
             });
 
@@ -1400,10 +1437,10 @@ public class MainFragment extends Fragment{
                             //ea4 = ed4.getText().toString();
                             break;
                     }
-                    az.setText(ii+vb1+vb2+vb3+vb4+
+                    score.setText(ii+vb1+vb2+vb3+vb4+
                             vb5+vb6+vb7+vb8+
                             vb9+vb10+vb11+vb12+
-                            vb13+vb14+vb15+vb16+vb17+"/17");
+                            vb13+vb14+vb15+vb16+vb17+vb18+"/18");
                 }
             });
 
@@ -1427,10 +1464,10 @@ public class MainFragment extends Fragment{
                             //ea4 = ed4.getText().toString();
                             break;
                     }
-                    az.setText(ii+vb1+vb2+vb3+vb4+
+                    score.setText(ii+vb1+vb2+vb3+vb4+
                             vb5+vb6+vb7+vb8+
                             vb9+vb10+vb11+vb12+
-                            vb13+vb14+vb15+vb16+vb17+"/17");
+                            vb13+vb14+vb15+vb16+vb17+vb18+"/18");
                 }
             });
 
@@ -1454,10 +1491,10 @@ public class MainFragment extends Fragment{
                             //ea4 = ed4.getText().toString();
                             break;
                     }
-                    az.setText(ii+vb1+vb2+vb3+vb4+
+                    score.setText(ii+vb1+vb2+vb3+vb4+
                             vb5+vb6+vb7+vb8+
                             vb9+vb10+vb11+vb12+
-                            vb13+vb14+vb15+vb16+vb17+"/17");
+                            vb13+vb14+vb15+vb16+vb17+vb18+"/18");
                 }
             });
 
@@ -1481,10 +1518,10 @@ public class MainFragment extends Fragment{
                             //ea4 = ed4.getText().toString();
                             break;
                     }
-                    az.setText(ii+vb1+vb2+vb3+vb4+
+                    score.setText(ii+vb1+vb2+vb3+vb4+
                             vb5+vb6+vb7+vb8+
                             vb9+vb10+vb11+vb12+
-                            vb13+vb14+vb15+vb16+vb17+"/17");
+                            vb13+vb14+vb15+vb16+vb17+vb18+"/18");
                 }
             });
 
@@ -1508,10 +1545,10 @@ public class MainFragment extends Fragment{
                             //ea4 = ed4.getText().toString();
                             break;
                     }
-                    az.setText(ii+vb1+vb2+vb3+vb4+
+                    score.setText(ii+vb1+vb2+vb3+vb4+
                             vb5+vb6+vb7+vb8+
                             vb9+vb10+vb11+vb12+
-                            vb13+vb14+vb15+vb16+vb17+"/17");
+                            vb13+vb14+vb15+vb16+vb17+vb18+"/18");
                 }
             });
 
@@ -1535,10 +1572,10 @@ public class MainFragment extends Fragment{
                             //ea4 = ed4.getText().toString();
                             break;
                     }
-                    az.setText(ii+vb1+vb2+vb3+vb4+
+                    score.setText(ii+vb1+vb2+vb3+vb4+
                             vb5+vb6+vb7+vb8+
                             vb9+vb10+vb11+vb12+
-                            vb13+vb14+vb15+vb16+vb17+"/17");
+                            vb13+vb14+vb15+vb16+vb17+vb18+"/18");
                 }
             });
 
@@ -1562,10 +1599,10 @@ public class MainFragment extends Fragment{
                             //ea4 = ed4.getText().toString();
                             break;
                     }
-                    az.setText(ii+vb1+vb2+vb3+vb4+
+                    score.setText(ii+vb1+vb2+vb3+vb4+
                             vb5+vb6+vb7+vb8+
                             vb9+vb10+vb11+vb12+
-                            vb13+vb14+vb15+vb16+vb17+"/17");
+                            vb13+vb14+vb15+vb16+vb17+vb18+"/18");
                 }
             });
 
@@ -1589,10 +1626,10 @@ public class MainFragment extends Fragment{
                             //ea4 = ed4.getText().toString();
                             break;
                     }
-                    az.setText(ii+vb1+vb2+vb3+vb4+
+                    score.setText(ii+vb1+vb2+vb3+vb4+
                             vb5+vb6+vb7+vb8+
                             vb9+vb10+vb11+vb12+
-                            vb13+vb14+vb15+vb16+vb17+"/17");
+                            vb13+vb14+vb15+vb16+vb17+vb18+"/18");
                 }
             });
 
@@ -1616,10 +1653,10 @@ public class MainFragment extends Fragment{
                             //ea4 = ed4.getText().toString();
                             break;
                     }
-                    az.setText(ii+vb1+vb2+vb3+vb4+
+                    score.setText(ii+vb1+vb2+vb3+vb4+
                             vb5+vb6+vb7+vb8+
                             vb9+vb10+vb11+vb12+
-                            vb13+vb14+vb15+vb16+vb17+"/17");
+                            vb13+vb14+vb15+vb16+vb17+vb18+"/18");
                 }
             });
 
@@ -1643,10 +1680,10 @@ public class MainFragment extends Fragment{
                             //ea4 = ed4.getText().toString();
                             break;
                     }
-                    az.setText(ii+vb1+vb2+vb3+vb4+
+                    score.setText(ii+vb1+vb2+vb3+vb4+
                             vb5+vb6+vb7+vb8+
                             vb9+vb10+vb11+vb12+
-                            vb13+vb14+vb15+vb16+vb17+"/17");
+                            vb13+vb14+vb15+vb16+vb17+vb18+"/18");
                 }
             });
 
@@ -1671,10 +1708,10 @@ public class MainFragment extends Fragment{
                             //ea4 = ed4.getText().toString();
                             break;
                     }
-                    az.setText(ii+vb1+vb2+vb3+vb4+
+                    score.setText(ii+vb1+vb2+vb3+vb4+
                             vb5+vb6+vb7+vb8+
                             vb9+vb10+vb11+vb12+
-                            vb13+vb14+vb15+vb16+vb17+"/17");
+                            vb13+vb14+vb15+vb16+vb17+vb18+"/18");
                 }
             });
 
@@ -1698,10 +1735,10 @@ public class MainFragment extends Fragment{
                             //ea4 = ed4.getText().toString();
                             break;
                     }
-                    az.setText(ii+vb1+vb2+vb3+vb4+
+                    score.setText(ii+vb1+vb2+vb3+vb4+
                             vb5+vb6+vb7+vb8+
                             vb9+vb10+vb11+vb12+
-                            vb13+vb14+vb15+vb16+vb17+"/17");
+                            vb13+vb14+vb15+vb16+vb17+vb18+"/18");
                 }
             });
 
@@ -1725,10 +1762,10 @@ public class MainFragment extends Fragment{
                             //ea4 = ed4.getText().toString();
                             break;
                     }
-                    az.setText(ii+vb1+vb2+vb3+vb4+
+                    score.setText(ii+vb1+vb2+vb3+vb4+
                             vb5+vb6+vb7+vb8+
                             vb9+vb10+vb11+vb12+
-                            vb13+vb14+vb15+vb16+vb17+"/17");
+                            vb13+vb14+vb15+vb16+vb17+vb18+"/18");
                 }
             });
 
@@ -1752,13 +1789,39 @@ public class MainFragment extends Fragment{
                             //ea4 = ed4.getText().toString();
                             break;
                     }
-                    az.setText(ii+vb1+vb2+vb3+vb4+
+                    score.setText(ii+vb1+vb2+vb3+vb4+
                             vb5+vb6+vb7+vb8+
                             vb9+vb10+vb11+vb12+
-                            vb13+vb14+vb15+vb16+vb17+"/17");
+                            vb13+vb14+vb15+vb16+vb17+vb18+"/18");
                 }
             });
 
+            rg18.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(RadioGroup group, int checkedId) {
+
+                    switch (checkedId)
+                    {
+                        case R.id.customrb1 :
+                            vb18 = viewGroup18.setvaluerb(R.id.customrb1);
+                            //Toast.makeText(getContext(),"HELLO",Toast.LENGTH_SHORT).show();
+                            viewGroup18.setinvisble();
+
+                            break;
+
+                        case R.id.customrb2 :
+                            vb18 = viewGroup18.setvaluerb(R.id.customrb2);
+                            //Toast.makeText(getContext(),"GG",Toast.LENGTH_SHORT).show();
+                            viewGroup18.setvisble();
+                            //ea4 = ed4.getText().toString();
+                            break;
+                    }
+                    score.setText(ii+vb1+vb2+vb3+vb4+
+                            vb5+vb6+vb7+vb8+
+                            vb9+vb10+vb11+vb12+
+                            vb13+vb14+vb15+vb16+vb17+vb18+"/18");
+                }
+            });
 
             FloatingActionButton fab = (FloatingActionButton) v.findViewById(R.id.fab);
             fab.setOnClickListener(new View.OnClickListener() {
@@ -1766,14 +1829,14 @@ public class MainFragment extends Fragment{
 
                 @Override
                 public void onClick(View v) {
-                    int max = 17;
+                    int max = 18;
                     allscore[0] = max - (ii+vb1+vb2+vb3+vb4+
                             vb5+vb6+vb7+vb8+
                             vb9+vb10+vb11+vb12+
-                            vb13+vb14+vb15+vb16+vb17);
+                            vb13+vb14+vb15+vb16+vb17+vb18);
 
                     //Toast.makeText(getContext(),"score : = "+ allscore[0],Toast.LENGTH_SHORT).show();
-                    String text[] = new String[17];
+                    String text[] = new String[18];
 
                     text[0] = ed1.getText().toString();
                     text[1] = ed2.getText().toString();
@@ -1792,10 +1855,11 @@ public class MainFragment extends Fragment{
                     text[14] = ed15.getText().toString();
                     text[15] = ed16.getText().toString();
                     text[16] = ed17.getText().toString();
+                    text[17] = ed18.getText().toString();
 
 
 
-                    Integer point[] = new Integer[17];
+                    Integer point[] = new Integer[18];
                     point[0] = vb1;
                     point[1] = vb2;
                     point[2] = vb3;
@@ -1813,8 +1877,9 @@ public class MainFragment extends Fragment{
                     point[14] = vb15;
                     point[15] = vb16;
                     point[16] = vb17;
+                    point[17] = vb18;
 
-                    String dd[] = new String[17];
+                    String dd[] = new String[18];
                     dd[0] = date1.getText().toString();
                     dd[1] = date2.getText().toString();
                     dd[2] = date3.getText().toString();
@@ -1832,6 +1897,7 @@ public class MainFragment extends Fragment{
                     dd[14] = date15.getText().toString();
                     dd[15] = date16.getText().toString();
                     dd[16] = date17.getText().toString();
+                    dd[17] = date18.getText().toString();
 
 
                     try {
@@ -1839,15 +1905,15 @@ public class MainFragment extends Fragment{
                         connectionSQL = new ConnectionSQL();
 
                         Connection con = connectionSQL.CONN();
-                        for (int i = 0 ; i < 17 ;i++)
+                        for (int i = 0 ; i < 18 ;i++)
                         {
                             stmt = con.createStatement();
-                            String commands = "update MAS_PJ " +
-                                    "set POINT = '"+ point[i] +"',TOTAL_POINT = '"+az.getText().toString()+"" +
+                            String commands = "update MAS_PJ_S " +
+                                    "set POINT = '"+ point[i] +"',TOTAL_POINT = '"+score.getText().toString()+"" +
                                     "',DOCUPDATE = CONVERT(VARCHAR(10),GETDATE(),110),DATE = '"+dd[i]+"',DOC_TEXT = '"+text[i]+"'  "+
                                     "where DOC_NUMBER = '"+a+"' and DOC_HEAD like '"+(i+1)+"%' ";
-                                    //"select '"+a+"','"+ head[i]+"','"+area+"',GETDATE(),'"+dd[i]+"','"+text[i]+"','"+ point[i] +"','"+az.getText().toString()+"'";
-                                    //" VALUES ('"+a+"','"+head[i]+"','"+area+"',CONVERT(VARCHAR(10),GETDATE(),110),'"+dd[i]+"','"+text[i]+"','"+ point[i] +"','"+az.getText().toString()+"',CONVERT(VARCHAR(10),GETDATE(),110))";
+                            //"select '"+a+"','"+ head[i]+"','"+area+"',GETDATE(),'"+dd[i]+"','"+text[i]+"','"+ point[i] +"','"+az.getText().toString()+"'";
+                            //" VALUES ('"+a+"','"+head[i]+"','"+area+"',CONVERT(VARCHAR(10),GETDATE(),110),'"+dd[i]+"','"+text[i]+"','"+ point[i] +"','"+az.getText().toString()+"',CONVERT(VARCHAR(10),GETDATE(),110))";
                             PreparedStatement preStmt = con.prepareStatement(commands);
                             preStmt.executeUpdate();
                             //Toast.makeText(getContext(),"jkj = "+ (i+1),Toast.LENGTH_SHORT).show();
@@ -1873,8 +1939,8 @@ public class MainFragment extends Fragment{
                         connectionSQL = new ConnectionSQL();
                         Connection con = connectionSQL.CONN();
                         stmt = con.createStatement();
-                        String commands = "update MAS_PJ_REPORT " +
-                                "set COUNTEDIT = '"+allscore[0]+"',TOTAL_POINT = '"+az.getText().toString()+"' " +
+                        String commands = "update MAS_PJ_REPORT_S " +
+                                "set COUNTEDIT = '"+allscore[0]+"',TOTAL_POINT = '"+score.getText().toString()+"' " +
                                 "where DOC_NUMBER = '"+a+"'";
                         //"select '"+a+"','"+ head[i]+"','"+area+"',GETDATE(),'"+dd[i]+"','"+text[i]+"','"+ point[i] +"','"+az.getText().toString()+"'";
                         //" VALUES ('"+ whcode +"','"+a+"','"+area+"',CONVERT(VARCHAR(10),GETDATE(),110),'"+az.getText().toString()+"','"+allscore[0]+"')";
@@ -1905,107 +1971,9 @@ public class MainFragment extends Fragment{
         }
 
 
-        return  v;
+        return v;
     }
 
-   /*private List<ParentListItem> generateCrimes() {
-        CrimeLab crimeLab = CrimeLab.get(getActivity());
-        List<Crime> crimes = crimeLab.getCrimes();
-        List<ParentListItem> parentListItems = new ArrayList<>();
-        for (Crime crime : crimes) {
-            List<CrimeChild> childItemList = new ArrayList<>();
-            childItemList.add(new CrimeChild(crime.getDate(), crime.isSolved()));
-            crime.setChildItemList(childItemList);
-            parentListItems.add(crime);
-        }
-        return parentListItems;
-    }*/
 
-    private void createGroupList() {
-
-        String a[] = {"1","2","3","4","5","6","7","8","9","10"};
-        groupList = new ArrayList<String>();
-        for (int i = 0 ; i < 10 ; i++) {
-            groupList.add(a[i]+".หัวข้อ");
-        }
-        /*groupList.add("1");
-        groupList.add("2");
-        groupList.add("3");
-        groupList.add("4");
-        groupList.add("5");
-        groupList.add("6");*/
-    }
-
-    /*private void updateDisplay() {
-        GregorianCalendar c = new GregorianCalendar(mYear, mMonth, mDay);
-        SimpleDateFormat sdf = new SimpleDateFormat("dd MMMM yyyy");
-
-        dt1.setText(sdf.format(c.getTime()));
-
-        sdf = new SimpleDateFormat("yyyy-MM-dd");
-
-        transDateString = sdf.format(c.getTime());
-    }*/
-
-
-    /*    private void createCollection() {
-
-            String[] hpModels = { "HP Pavilion G6-2014TX", "ProBook HP 4540",
-                    "HP Envy 4-1025TX" };
-            String[] hclModels = { "HCL S2101", "HCL L2102", "HCL V2002" };
-            String[] lenovoModels = { "IdeaPad Z Series", "Essential G Series",
-                    "ThinkPad X Series", "Ideapad Z Series" };
-            String[] sonyModels = { "VAIO E Series", "VAIO Z Series",
-                    "VAIO S Series", "VAIO YB Series" };
-            String[] dellModels = { "Inspiron", "Vostro", "XPS" };
-            String[] samsungModels = { "NP Series", "Series 5", "SF Series" };
-
-            Collection = new LinkedHashMap<String, List<String>>();
-
-            for (String laptop : groupList) {
-                if (laptop.equals("HP")) {
-                    loadChild(hpModels);
-                } else if (laptop.equals("Dell"))
-                    loadChild(dellModels);
-                else if (laptop.equals("Sony"))
-                    loadChild(sonyModels);
-                else if (laptop.equals("HCL"))
-                    loadChild(hclModels);
-                else if (laptop.equals("Samsung"))
-                    loadChild(samsungModels);
-                else
-                    loadChild(lenovoModels);
-
-                Collection.put(laptop, childList);
-            }
-        }
-
-        private void loadChild(String[] laptopModels) {
-            childList = new ArrayList<String>();
-            for (String model : laptopModels)
-                childList.add(model);
-        }
-    */
-
-
-
-
-
-
-
-
-
-
-
-    /*public void createData() //วน for ใส่ค่า
-    {
-        /*for (int j = 0; j < g.length; j++) {
-            EGroup group = new EGroup("1");
-            for (int i = 0; i < test.length; i++) {
-                group.children.add(test[i]);
-            }
-            groups.append(j, group);
-        }
-    }*/
 
 }

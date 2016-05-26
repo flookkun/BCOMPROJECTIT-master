@@ -27,7 +27,8 @@ import java.util.ArrayList;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class HistoryFragment extends Fragment {
+public class HistoryCleanFragment extends Fragment {
+
 
     Integer check = 0;
     ConnectionSQL connectionSQL;
@@ -40,7 +41,7 @@ public class HistoryFragment extends Fragment {
 
     private ArrayList listData;
 
-    public HistoryFragment() {
+    public HistoryCleanFragment() {
         // Required empty public constructor
     }
 
@@ -49,7 +50,7 @@ public class HistoryFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.fragment_history, null);
+        View v = inflater.inflate(R.layout.fragment_history_clean, null);
 
         getActivity().setTitle("ประวัติย้อนหลัง");
         Bundle bundle  = this.getArguments();
@@ -63,7 +64,7 @@ public class HistoryFragment extends Fragment {
             stmt = con.createStatement();
             String query =
 
-                    "select * from MAS_PJ_REPORT where arcode = '"+warea+"'";
+                    "select * from MAS_PJ_REPORT_C where arcode = '"+warea+"'";
 
             rs = stmt.executeQuery(query);
             list1 = new ArrayList<>();
@@ -115,7 +116,6 @@ public class HistoryFragment extends Fragment {
         lv8.setOnItemClickListener(new ItemList());
         //Toast.makeText(getActivity(),warea,Toast.LENGTH_LONG).show();
 
-
         FloatingActionButton fab = (FloatingActionButton) v.findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -126,7 +126,6 @@ public class HistoryFragment extends Fragment {
 
         return v;
     }
-
     public ArrayList getListData() {
 
         ArrayList<NewsItem> results = new ArrayList<NewsItem>();
@@ -154,7 +153,7 @@ public class HistoryFragment extends Fragment {
             TextView txt = (TextView) vg.findViewById(R.id.doc_number);
             //Toast.makeText(getActivity(),txt.getText().toString(),Toast.LENGTH_SHORT).show();
 
-            MainFragment fragment = new MainFragment();
+            MainCleanFragment fragment = new MainCleanFragment();
             Bundle bundle = new Bundle();
             bundle.putInt("chk",check);
             bundle.putString("Key",txt.getText().toString());
@@ -166,4 +165,5 @@ public class HistoryFragment extends Fragment {
             fragTransaction.replace(R.id.fragment_con,fragment).addToBackStack(null).commit();
         }
     }
+
 }

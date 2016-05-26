@@ -185,9 +185,7 @@ public class Main extends AppCompatActivity implements NavigationView.OnNavigati
             android.support.v4.app.FragmentTransaction fragTransaction =
                     getSupportFragmentManager().beginTransaction();
             fragTransaction.replace(R.id.fragment_con,fragment).addToBackStack("tag").commit();
-            /*Intent edit = new Intent(getApplicationContext(),Edit.class);
-            edit.putExtra("STCODE",st);
-            startActivity(edit);*/
+
 
         }
         else if (id == R.id.nav_exit) {

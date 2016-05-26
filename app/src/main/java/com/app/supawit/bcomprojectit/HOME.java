@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.RelativeLayout;
 
 import com.app.supawit.bcomprojectit.Fragment.HistoryFragment;
+import com.app.supawit.bcomprojectit.Fragment.QSCFragment;
 import com.app.supawit.bcomprojectit.Fragment.warehouseFragment;
 
 
@@ -94,13 +95,20 @@ public class HOME extends Fragment implements View.OnClickListener  {
             fragTransaction.replace(R.id.fragment_con,fragment).addToBackStack("tag").commit();
 
         }
+
+
         else if(v == b){
 
-            HistoryFragment fragment = new HistoryFragment();
+
+
+            QSCFragment fragment = new QSCFragment();
 
             Bundle bundle = new Bundle();
             bundle.putString("Key",data);
+            bundle.putInt("chk",0);
             fragment.setArguments(bundle);
+
+
 
             FragmentManager fragmentManager = getFragmentManager();
             FragmentTransaction fragTransacrion = fragmentManager.beginTransaction();

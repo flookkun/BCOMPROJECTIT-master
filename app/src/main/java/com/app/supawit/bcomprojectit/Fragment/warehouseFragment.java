@@ -38,7 +38,7 @@ public class warehouseFragment extends Fragment {
     private ListView lv;
 
     ArrayAdapter<String> adapter;
-    int check = 1;
+    int check;
     EditText inputSearch;
     String area;
     ConnectionSQL connectionSQL;
@@ -60,7 +60,7 @@ public class warehouseFragment extends Fragment {
 
         Bundle bundle  = this.getArguments();
         area = bundle.getString("Key");
-
+        check = bundle.getInt("chk");
 
         try {
             connectionSQL = new ConnectionSQL();
@@ -153,6 +153,7 @@ public class warehouseFragment extends Fragment {
             Bundle bundle = new Bundle();
             bundle.putString("Key",txt.getText().toString());
             bundle.putString("area",area);
+            bundle.putInt("chk",check);
             fragment.setArguments(bundle);
             FragmentManager fragmentManager = getFragmentManager();
             FragmentTransaction fragTransaction = fragmentManager.beginTransaction();

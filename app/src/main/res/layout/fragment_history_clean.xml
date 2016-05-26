@@ -3,19 +3,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="com.app.supawit.bcomprojectit.Fragment.HistoryFragment">
+    tools:context="com.app.supawit.bcomprojectit.Fragment.HistoryCleanFragment">
 
     <!-- TODO: Update blank fragment layout -->
-
     <ListView
         android:id="@+id/lv8"
         android:layout_marginTop="60dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_width="match_parent"
-        android:layout_height="fill_parent"
-        >
-        
+        android:layout_height="fill_parent">
+
+
     </ListView>
 
     <android.support.design.widget.FloatingActionButton

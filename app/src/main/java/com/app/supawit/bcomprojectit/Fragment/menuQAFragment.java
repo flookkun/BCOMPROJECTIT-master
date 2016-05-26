@@ -95,7 +95,8 @@ public class menuQAFragment extends Fragment {
         btna.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                MainFragment fragment = new MainFragment();
+
+                QSCFragment fragment = new QSCFragment();
                 Bundle bundle = new Bundle();
                 bundle.putString("Key",test.getText().toString());
                 bundle.putString("area",area);
@@ -106,6 +107,7 @@ public class menuQAFragment extends Fragment {
                 FragmentTransaction fragTransaction = fragmentManager.beginTransaction();
                 //fragTransaction.replace(R.id.fragment_con,fragment);
                 fragTransaction.replace(R.id.fragment_con,fragment).addToBackStack("1").commit();
+
             }
         });
 

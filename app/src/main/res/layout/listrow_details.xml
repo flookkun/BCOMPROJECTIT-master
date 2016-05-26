@@ -6,6 +6,7 @@
     android:layout_height="wrap_content"
     android:background="@color/dim_foreground_disabled_material_dark">
 
+
     <com.app.supawit.bcomprojectit.View.CustomViewGroup
         android:id="@+id/viewgroup1"
         android:layout_width="wrap_content"
