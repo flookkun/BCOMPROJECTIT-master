@@ -48,7 +48,7 @@ public class CapFragment extends Fragment {
     byte[] byteArray;
     Button btncap;
     CardView c1;
-    String encodedImage;
+    String[] encodedImage = new String[6];
     ConnectionSQL connectionSQL;
     Statement stmt = null;
     ResultSet rs = null;
@@ -130,13 +130,14 @@ public class CapFragment extends Fragment {
                 try {
                     connectionSQL = new ConnectionSQL();
                     Connection con = connectionSQL.CONN();
-                    stmt = con.createStatement();
-                    String commands = "Insert into ImgTbl2 (ImgName,Img) values ('"
-                            + ss + "','" + encodedImage
-                            + "')";
-                    PreparedStatement preStmt = con.prepareStatement(commands);
-                    preStmt.executeUpdate();
-
+                    for(int i = 0 ; i < 5 ; i++) {
+                        stmt = con.createStatement();
+                        String commands = "Insert into ImgTbl2 (ImgName,Img) values ('"
+                                + ss + "','" + encodedImage[i]
+                                + "')";
+                        PreparedStatement preStmt = con.prepareStatement(commands);
+                        preStmt.executeUpdate();
+                    }
                     Toast.makeText(getActivity(),"บันทึกสำเร็จ",Toast.LENGTH_SHORT).show();
                     //เปิดหน้า fragment
                     //getFragmentManager().executePendingTransactions();
@@ -178,7 +179,7 @@ public class CapFragment extends Fragment {
                 pic.compress(Bitmap.CompressFormat.JPEG,90,bytes);
 
                 byteArray = bytes.toByteArray();
-                encodedImage = Base64.encodeToString(byteArray, Base64.DEFAULT);
+                encodedImage[0] = Base64.encodeToString(byteArray, Base64.DEFAULT);
 
                 File destination = new File(Environment.getExternalStorageDirectory(),System.currentTimeMillis() + ".jpg");
                 FileOutputStream fo;
@@ -195,11 +196,17 @@ public class CapFragment extends Fragment {
                 //Toast.makeText(getContext(),encodedImage,Toast.LENGTH_LONG).show();
 
             }
+
+
             else if (requestCode == 2){
                 image3.setVisibility(View.VISIBLE);
                 Bitmap pic = (Bitmap) data.getExtras().get("data");
                 ByteArrayOutputStream bytes = new ByteArrayOutputStream();
                 pic.compress(Bitmap.CompressFormat.JPEG,90,bytes);
+
+                byteArray = bytes.toByteArray();
+                encodedImage[1] = Base64.encodeToString(byteArray, Base64.DEFAULT);
+
                 File destination = new File(Environment.getExternalStorageDirectory(),System.currentTimeMillis() + ".jpg");
                 FileOutputStream fo;
                 try {
@@ -218,6 +225,10 @@ public class CapFragment extends Fragment {
                 Bitmap pic = (Bitmap) data.getExtras().get("data");
                 ByteArrayOutputStream bytes = new ByteArrayOutputStream();
                 pic.compress(Bitmap.CompressFormat.JPEG,90,bytes);
+
+                byteArray = bytes.toByteArray();
+                encodedImage[2] = Base64.encodeToString(byteArray, Base64.DEFAULT);
+
                 File destination = new File(Environment.getExternalStorageDirectory(),System.currentTimeMillis() + ".jpg");
                 FileOutputStream fo;
                 try {
@@ -236,6 +247,11 @@ public class CapFragment extends Fragment {
                 Bitmap pic = (Bitmap) data.getExtras().get("data");
                 ByteArrayOutputStream bytes = new ByteArrayOutputStream();
                 pic.compress(Bitmap.CompressFormat.JPEG,90,bytes);
+
+
+                byteArray = bytes.toByteArray();
+                encodedImage[3] = Base64.encodeToString(byteArray, Base64.DEFAULT);
+
                 File destination = new File(Environment.getExternalStorageDirectory(),System.currentTimeMillis() + ".jpg");
                 FileOutputStream fo;
                 try {
@@ -254,6 +270,10 @@ public class CapFragment extends Fragment {
                 Bitmap pic = (Bitmap) data.getExtras().get("data");
                 ByteArrayOutputStream bytes = new ByteArrayOutputStream();
                 pic.compress(Bitmap.CompressFormat.JPEG,90,bytes);
+
+                byteArray = bytes.toByteArray();
+                encodedImage[4] = Base64.encodeToString(byteArray, Base64.DEFAULT);
+
                 File destination = new File(Environment.getExternalStorageDirectory(),System.currentTimeMillis() + ".jpg");
                 FileOutputStream fo;
                 try {
@@ -272,6 +292,10 @@ public class CapFragment extends Fragment {
                 Bitmap pic = (Bitmap) data.getExtras().get("data");
                 ByteArrayOutputStream bytes = new ByteArrayOutputStream();
                 pic.compress(Bitmap.CompressFormat.JPEG,90,bytes);
+
+                byteArray = bytes.toByteArray();
+                encodedImage[5] = Base64.encodeToString(byteArray, Base64.DEFAULT);
+
                 File destination = new File(Environment.getExternalStorageDirectory(),System.currentTimeMillis() + ".jpg");
                 FileOutputStream fo;
                 try {
