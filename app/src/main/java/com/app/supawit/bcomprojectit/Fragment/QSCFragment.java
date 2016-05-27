@@ -62,6 +62,13 @@ public class QSCFragment extends Fragment {
                     //fragTransaction.replace(R.id.fragment_con,fragment);
                     fragTransaction.replace(R.id.fragment_con,fragment).addToBackStack("1").commit();
 
+                    /*TestImageFragment fragment = new TestImageFragment();
+                    FragmentManager fragmentManager = getFragmentManager();
+                    FragmentTransaction fragTransaction = fragmentManager.beginTransaction();
+                    //fragTransaction.replace(R.id.fragment_con,fragment);
+                    fragTransaction.replace(R.id.fragment_con,fragment).addToBackStack("1").commit();*/
+
+
                 }
             });
             r2.setOnClickListener(new View.OnClickListener() {

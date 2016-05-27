@@ -52,12 +52,13 @@ public class TestImageFragment extends Fragment {
             connectionSQL = new ConnectionSQL();
             Connection con = connectionSQL.CONN();
             stmt = con.createStatement();
-            String truckstring = "select *from ImgTbl2 where id = '6' ";
+            String truckstring = "select * from ImgTbl2 where id = '4' ";
             Statement stmt = con.createStatement();
             rs = stmt.executeQuery(truckstring);
 
             if(rs.next()) {
                 z = rs.getString("Img");
+                Toast.makeText(getContext(),z,Toast.LENGTH_SHORT).show();
                 byte[] decodeString = Base64.decode(z, Base64.DEFAULT);
                 Bitmap decodebitmap = BitmapFactory.decodeByteArray(decodeString,
                         0, decodeString.length);
