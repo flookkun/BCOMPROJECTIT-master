@@ -380,7 +380,7 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
         android:src="@drawable/disk"
-        app:backgroundTint="#FDB5C8"
+        app:backgroundTint="#F2819A"
         android:layout_alignParentRight="true" />
 
     <RelativeLayout

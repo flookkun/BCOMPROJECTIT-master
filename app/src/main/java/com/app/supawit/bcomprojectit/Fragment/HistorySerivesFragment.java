@@ -51,7 +51,7 @@ public class HistorySerivesFragment extends Fragment {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_history_serives, null);
 
-        getActivity().setTitle("ประวัติย้อนหลัง");
+        getActivity().setTitle("ประวัติย้อนหลัง Services");
         Bundle bundle  = this.getArguments();
         warea = bundle.getString("Key");
 

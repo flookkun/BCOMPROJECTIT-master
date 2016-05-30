@@ -36,7 +36,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Quanlity"
+                android:text="Quality"
                 android:textSize="18dp"
                 android:textStyle="bold"
                 android:textColor="#FFF"

@@ -1,12 +1,17 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Fragment.warehouseFragment"
     android:paddingTop="45dp">
 
-    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- TODO: Update blank fragment layout -->
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -19,11 +24,24 @@
             android:hint="เลือกสาขา.."
             android:textSize="20sp"
             android:id="@+id/inputsearch"
-
-             />
+            />
         <ListView
             android:id="@+id/list_view"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content" />
 
-</LinearLayout>
+    </LinearLayout>
+
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="25dp"
+        android:id="@+id/fab"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        app:backgroundTint="#F2819A"
+        android:layout_alignParentRight="true"
+        android:src="@android:drawable/ic_menu_revert" />
+
+</RelativeLayout>

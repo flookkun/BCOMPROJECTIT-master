@@ -2,6 +2,7 @@ package com.app.supawit.bcomprojectit.Fragment;
 
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -123,6 +124,16 @@ public class menuQAFragment extends Fragment {
                 startActivityForResult(intent, TAKE_PICTURE);
             }
         });*/
+
+        FloatingActionButton fab = (FloatingActionButton) v.findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                getFragmentManager().popBackStack();
+
+            }
+        });
 
 
 

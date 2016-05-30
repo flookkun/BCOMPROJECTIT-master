@@ -52,7 +52,7 @@ public class HistoryCleanFragment extends Fragment {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_history_clean, null);
 
-        getActivity().setTitle("ประวัติย้อนหลัง");
+        getActivity().setTitle("ประวัติย้อนหลัง Cleanliness");
         Bundle bundle  = this.getArguments();
         warea = bundle.getString("Key");
 

@@ -17,6 +17,7 @@ import android.widget.TextView;
 
 import com.app.supawit.bcomprojectit.Fragment.EditFragment;
 import com.app.supawit.bcomprojectit.Fragment.HistoryFragment;
+import com.app.supawit.bcomprojectit.Fragment.QSCFragment;
 import com.app.supawit.bcomprojectit.Fragment.menuQAFragment;
 
 import java.sql.Connection;
@@ -195,7 +196,7 @@ public class Main extends AppCompatActivity implements NavigationView.OnNavigati
         }
         else if (id == R.id.nav_history){
 
-            HistoryFragment historyFragment = new HistoryFragment();
+            QSCFragment historyFragment = new QSCFragment();
             Bundle bundle = new Bundle();
             bundle.putString("Key",area);
             historyFragment.setArguments(bundle);

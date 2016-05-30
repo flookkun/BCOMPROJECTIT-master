@@ -2,6 +2,7 @@ package com.app.supawit.bcomprojectit.Fragment;
 
 
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -90,8 +91,6 @@ public class warehouseFragment extends Fragment {
                 "1011 : MALT", "1012 : CENP", "1013 : LOTL", "1014 : CJUR","5066 : BCASW"
                 ,"5013 : BCBCB","5048 : BCBCT","5039 : BCBHM","5057 : BCBKB","5030 : BCBNS","5016 : BCBRD"
                 ,"5045 : BCBSP","7001 : BMSCSN","7002 : BMFPR","7003 : BMCCM","7004 : BMFSI","7005 : BMCSM"};*/
-
-
         //list = new ArrayList<String>();
        // for (int i = 0; i < abbname.length(); ++i) {
            // list.add(abbname);
@@ -135,6 +134,15 @@ public class warehouseFragment extends Fragment {
 
             }
 
+        });
+        FloatingActionButton fab = (FloatingActionButton) v.findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                getFragmentManager().popBackStack();
+
+            }
         });
 
 

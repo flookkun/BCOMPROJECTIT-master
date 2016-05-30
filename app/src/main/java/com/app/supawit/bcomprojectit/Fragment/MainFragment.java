@@ -8,9 +8,11 @@ import android.util.AndroidRuntimeException;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ExpandableListView;
 import android.widget.RadioGroup;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -72,6 +74,14 @@ public class MainFragment extends Fragment{
             ,vg14 = 0,vg15 = 0,vg16 = 0
             ,vg17 = 0;
 
+    int chkclick1 = 0,chkclick2 = 0,chkclick3 = 0,chkclick4 = 0,chkclick5 = 0
+            ,chkclick6 = 0,chkclick7 = 0,chkclick8 = 0,chkclick9 = 0,chkclick10 = 0
+            ,chkclick11 = 0,chkclick12 = 0,chkclick13 = 0,chkclick14 = 0,chkclick15 = 0
+            ,chkclick16 = 0,chkclick17 = 0;
+
+    int edchk1 = 0,edchk2 = 0,edchk3 = 0,edchk4 = 0,edchk5 = 0,edchk6 = 0,edchk7 = 0
+            ,edchk8 = 0,edchk9 = 0,edchk10 = 0,edchk11 = 0,edchk12 = 0,edchk13 = 0,edchk14 = 0
+            ,edchk15 = 0,edchk16 = 0,edchk17 = 0;
 
     int vb1 = 0,vb2 = 0,vb3 = 0,vb4 = 0
             ,vb5 = 0,vb6 = 0,vb7 = 0
@@ -331,6 +341,9 @@ public class MainFragment extends Fragment{
             rg1.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
                 @Override
                 public void onCheckedChanged(RadioGroup group, int checkedId) {
+
+                    chkclick1 = 1;
+
                     switch (checkedId)
                     {
                         case R.id.customrb1 :
@@ -343,6 +356,7 @@ public class MainFragment extends Fragment{
                             //Toast.makeText(getContext(),"GG",Toast.LENGTH_SHORT).show();
                             viewGroup1.setvisble();
                             //ea1 = ed1.getText().toString();
+                            //Toast.makeText(getContext(),"vd ="+edchk1,Toast.LENGTH_SHORT).show();
                             break;
                     }
 
@@ -361,6 +375,7 @@ public class MainFragment extends Fragment{
                 @Override
                 public void onCheckedChanged(RadioGroup group, int checkedId) {
 
+                    chkclick2 = 1;
                     switch (checkedId)
                     {
                         case R.id.customrb1 :
@@ -388,6 +403,7 @@ public class MainFragment extends Fragment{
             rg3.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
                 @Override
                 public void onCheckedChanged(RadioGroup group, int checkedId) {
+                    chkclick3 = 1;
                     switch (checkedId)
                     {
                         case R.id.customrb1 :
@@ -399,6 +415,7 @@ public class MainFragment extends Fragment{
                             vg3 = viewGroup3.setvaluerb(R.id.customrb2);
                             //Toast.makeText(getContext(),"GG",Toast.LENGTH_SHORT).show();
                             viewGroup3.setvisble();
+
                             //ea3 = ed3.getText().toString();
                             break;
                     }
@@ -412,7 +429,7 @@ public class MainFragment extends Fragment{
             rg4.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
                 @Override
                 public void onCheckedChanged(RadioGroup group, int checkedId) {
-
+                    chkclick4 = 1;
                     switch (checkedId)
                     {
                         case R.id.customrb1 :
@@ -439,6 +456,8 @@ public class MainFragment extends Fragment{
             rg5.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
                 @Override
                 public void onCheckedChanged(RadioGroup group, int checkedId) {
+
+                    chkclick5 = 1;
                     switch (checkedId)
                     {
                         case R.id.customrb1 :
@@ -467,6 +486,8 @@ public class MainFragment extends Fragment{
             rg6.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
                 @Override
                 public void onCheckedChanged(RadioGroup group, int checkedId) {
+
+                    chkclick6 = 1;
                     switch (checkedId)
                     {
                         case R.id.customrb1 :
@@ -495,6 +516,8 @@ public class MainFragment extends Fragment{
             rg7.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
                 @Override
                 public void onCheckedChanged(RadioGroup group, int checkedId) {
+
+                    chkclick7 = 1;
                     switch (checkedId)
                     {
                         case R.id.customrb1 :
@@ -523,6 +546,8 @@ public class MainFragment extends Fragment{
             rg8.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
                 @Override
                 public void onCheckedChanged(RadioGroup group, int checkedId) {
+
+                    chkclick8 = 1;
                     switch (checkedId)
                     {
                         case R.id.customrb1 :
@@ -551,6 +576,8 @@ public class MainFragment extends Fragment{
             rg9.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
                 @Override
                 public void onCheckedChanged(RadioGroup group, int checkedId) {
+
+                    chkclick9 = 1;
                     switch (checkedId)
                     {
                         case R.id.customrb1 :
@@ -562,6 +589,7 @@ public class MainFragment extends Fragment{
                             vg9 = viewGroup9.setvaluerb(R.id.customrb2);
                             //Toast.makeText(getContext(),"GG",Toast.LENGTH_SHORT).show();
                             viewGroup9.setvisble();
+                            String edt = ed9.getText().toString();
                             //ea1 = ed1.getText().toString();
                             break;
                     }
@@ -579,6 +607,8 @@ public class MainFragment extends Fragment{
             rg10.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
                 @Override
                 public void onCheckedChanged(RadioGroup group, int checkedId) {
+
+                    chkclick10 = 1;
                     switch (checkedId)
                     {
                         case R.id.customrb1 :
@@ -608,6 +638,8 @@ public class MainFragment extends Fragment{
             rg11.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
                 @Override
                 public void onCheckedChanged(RadioGroup group, int checkedId) {
+
+                    chkclick11 = 1;
                     switch (checkedId)
                     {
                         case R.id.customrb1 :
@@ -619,6 +651,7 @@ public class MainFragment extends Fragment{
                             vg11 = viewGroup11.setvaluerb(R.id.customrb2);
                             //Toast.makeText(getContext(),"GG",Toast.LENGTH_SHORT).show();
                             viewGroup11.setvisble();
+                            String edt = ed11.getText().toString();
                             //ea1 = ed1.getText().toString();
                             break;
                     }
@@ -636,6 +669,8 @@ public class MainFragment extends Fragment{
             rg12.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
                 @Override
                 public void onCheckedChanged(RadioGroup group, int checkedId) {
+
+                    chkclick12 = 1;
                     switch (checkedId)
                     {
                         case R.id.customrb1 :
@@ -664,6 +699,8 @@ public class MainFragment extends Fragment{
             rg13.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
                 @Override
                 public void onCheckedChanged(RadioGroup group, int checkedId) {
+
+                    chkclick13 = 1;
                     switch (checkedId)
                     {
                         case R.id.customrb1 :
@@ -693,6 +730,8 @@ public class MainFragment extends Fragment{
             rg14.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
                 @Override
                 public void onCheckedChanged(RadioGroup group, int checkedId) {
+
+                    chkclick14 = 1;
                     switch (checkedId)
                     {
                         case R.id.customrb1 :
@@ -721,6 +760,8 @@ public class MainFragment extends Fragment{
             rg15.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
                 @Override
                 public void onCheckedChanged(RadioGroup group, int checkedId) {
+
+                    chkclick15 = 1;
                     switch (checkedId)
                     {
                         case R.id.customrb1 :
@@ -749,6 +790,8 @@ public class MainFragment extends Fragment{
             rg16.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
                 @Override
                 public void onCheckedChanged(RadioGroup group, int checkedId) {
+
+                    chkclick16 = 1;
                     switch (checkedId)
                     {
                         case R.id.customrb1 :
@@ -777,6 +820,8 @@ public class MainFragment extends Fragment{
             rg17.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
                 @Override
                 public void onCheckedChanged(RadioGroup group, int checkedId) {
+
+                    chkclick17 = 1;
                     switch (checkedId)
                     {
                         case R.id.customrb1 :
@@ -814,6 +859,12 @@ public class MainFragment extends Fragment{
             final String area = bundle.getString("area");
             final String abbname = bundle.getString("wh");
 
+            /*String edt = ed1.getText().toString();
+            if(edt.matches(""))
+            {
+                edchk1 = 1;
+                Toast.makeText(getContext(),"vd ="+edchk1,Toast.LENGTH_SHORT).show();
+            }*/
 
 
             ax.setText(a);
@@ -843,110 +894,384 @@ public class MainFragment extends Fragment{
             fab.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+
                     int max = 17;
+                    int sum = chkclick1+chkclick2+chkclick3+chkclick4+chkclick5
+                            +chkclick6+chkclick7+chkclick8+chkclick9+chkclick10
+                            +chkclick11+chkclick12+chkclick13+chkclick14+chkclick15
+                            +chkclick16+chkclick17;
 
-                    int[] allscore = new int[1];
-                    allscore[0] = max - (ii+vg1+vg2+vg3+vg4
-                            +vg5+vg6+vg7+vg8+
-                            vg9+vg10+vg11+vg12+
-                            vg13+vg14+vg15+vg16+vg17);
-
-                    String text[] = new String[64];
-
-                    text[0] = ed1.getText().toString();
-                    text[1] = ed2.getText().toString();
-                    text[2] = ed3.getText().toString();
-                    text[3] = ed4.getText().toString();
-                    text[4] = ed5.getText().toString();
-                    text[5] = ed6.getText().toString();
-                    text[6] = ed7.getText().toString();
-                    text[7] = ed8.getText().toString();
-                    text[8] = ed9.getText().toString();
-                    text[9] = ed10.getText().toString();
-                    text[10] = ed11.getText().toString();
-                    text[11] = ed12.getText().toString();
-                    text[12] = ed13.getText().toString();
-                    text[13] = ed14.getText().toString();
-                    text[14] = ed15.getText().toString();
-                    text[15] = ed16.getText().toString();
-                    text[16] = ed17.getText().toString();
-
-                    Integer point[] = new Integer[64];
-                    point[0] = vg1;
-                    point[1] = vg2;
-                    point[2] = vg3;
-                    point[3] = vg4;
-                    point[4] = vg5;
-                    point[5] = vg6;
-                    point[6] = vg7;
-                    point[7] = vg8;
-                    point[8] = vg9;
-                    point[9] = vg10;
-                    point[10] = vg11;
-                    point[11] = vg12;
-                    point[12] = vg13;
-                    point[13] = vg14;
-                    point[14] = vg15;
-                    point[15] = vg16;
-                    point[16] = vg17;
-
-
-                    String dd[] = new String[64];
-                    dd[0] = date1.getText().toString();
-                    dd[1] = date2.getText().toString();
-                    dd[2] = date3.getText().toString();
-                    dd[3] = date4.getText().toString();
-                    dd[4] = date5.getText().toString();
-                    dd[5] = date6.getText().toString();
-                    dd[6] = date7.getText().toString();
-                    dd[7] = date8.getText().toString();
-                    dd[8] = date9.getText().toString();
-                    dd[9] = date10.getText().toString();
-                    dd[10] = date11.getText().toString();
-                    dd[11] = date12.getText().toString();
-                    dd[12] = date13.getText().toString();
-                    dd[13] = date14.getText().toString();
-                    dd[14] = date15.getText().toString();
-                    dd[15] = date16.getText().toString();
-                    dd[16] = date17.getText().toString();
-
-
-                    try {
-                        connectionSQL = new ConnectionSQL();
-                        Connection con = connectionSQL.CONN();
-                        for (int i = 0 ; i < 17 ;i++)
-                        {
-                            stmt = con.createStatement();
-                            String commands = "insert MAS_PJ " +
-                                    //"select '"+a+"','"+ head[i]+"','"+area+"',GETDATE(),'"+dd[i]+"','"+text[i]+"','"+ point[i] +"','"+az.getText().toString()+"'";
-                                    " VALUES ('"+a+"','"+head[i]+"','"+area+"',CONVERT(VARCHAR(10),GETDATE(),110),'"+dd[i]+"','"+text[i]+"','"+ point[i] +"','"+az.getText().toString()+"',CONVERT(VARCHAR(10),GETDATE(),110))";
-                            PreparedStatement preStmt = con.prepareStatement(commands);
-                            preStmt.executeUpdate();
+                    ///// check edittext vg1 = 0/////
+                    if(vg1 == 0){
+                        String edt = ed1.getText().toString();
+                        String dt = date1.getText().toString();
+                        if(edt.matches("") || dt.matches("วันที่")){
+                            edchk1 = 1;
                         }
-                        stmt = con.createStatement();
-                        String commands = "insert MAS_PJ_REPORT " +
-                                //"select '"+a+"','"+ head[i]+"','"+area+"',GETDATE(),'"+dd[i]+"','"+text[i]+"','"+ point[i] +"','"+az.getText().toString()+"'";
-                                " VALUES ('"+ whcode +"','"+a+"','"+area+"',CONVERT(VARCHAR(10),GETDATE(),110),'"+az.getText().toString()+"','"+allscore[0]+"')";
-                        PreparedStatement preStmt = con.prepareStatement(commands);
-                        preStmt.executeUpdate();
-                        Toast.makeText(getActivity(),"บันทึกสำเร็จ",Toast.LENGTH_SHORT).show();
-                        //เปิดหน้า fragment
-                        //getFragmentManager().executePendingTransactions();
-                        getFragmentManager().popBackStack();
-
-                    }catch (SQLException ex){
-                        Toast.makeText(getActivity(),ex.toString(),Toast.LENGTH_SHORT).show();
-                    } catch (IOError ex) {
-                        Toast.makeText(getActivity(),ex.toString(),Toast.LENGTH_SHORT).show();
-                    } catch (AndroidRuntimeException ex) {
-                        Toast.makeText(getActivity(),ex.toString(),Toast.LENGTH_SHORT).show();
-                    } catch (NullPointerException ex) {
-                        Toast.makeText(getActivity(),ex.toString(),Toast.LENGTH_SHORT).show();
-                    } catch (Exception ex) {
-                        Toast.makeText(getActivity(),ex.toString(),Toast.LENGTH_SHORT).show();
+                        else
+                        {
+                            edchk1 = 0;
+                        }
+                    }
+                    if(vg2 == 0){
+                        String edt = ed2.getText().toString();
+                        String dt = date2.getText().toString();
+                        if(edt.matches("") || dt.matches("วันที่")){
+                            edchk2 = 1;
+                        }
+                        else
+                        {
+                            edchk2 = 0;
+                        }
+                    }
+                    if(vg3 == 0){
+                        String edt = ed3.getText().toString();
+                        String dt = date3.getText().toString();
+                        if(edt.matches("") || dt.matches("วันที่")){
+                            edchk3 = 1;
+                        }
+                        else
+                        {
+                            edchk3 = 0;
+                        }
+                    }
+                    if(vg4 == 0){
+                        String edt = ed4.getText().toString();
+                        String dt = date4.getText().toString();
+                        if(edt.matches("") || dt.matches("วันที่")){
+                            edchk4 = 1;
+                        }
+                        else
+                        {
+                            edchk4 = 0;
+                        }
+                    }
+                    if(vg5 == 0){
+                        String edt = ed5.getText().toString();
+                        String dt = date5.getText().toString();
+                        if(edt.matches("") || dt.matches("วันที่")){
+                            edchk5 = 1;
+                        }
+                        else
+                        {
+                            edchk5 = 0;
+                        }
+                    }
+                    if(vg6 == 0){
+                        String edt = ed6.getText().toString();
+                        String dt = date6.getText().toString();
+                        if(edt.matches("") || dt.matches("วันที่")){
+                            edchk6 = 1;
+                        }
+                        else
+                        {
+                            edchk6 = 0;
+                        }
+                    }
+                    if(vg7 == 0){
+                        String edt = ed7.getText().toString();
+                        String dt = date7.getText().toString();
+                        if(edt.matches("") || dt.matches("วันที่")){
+                            edchk7 = 1;
+                        }
+                        else
+                        {
+                            edchk7 = 0;
+                        }
+                    }
+                    if(vg8 == 0){
+                        String edt = ed8.getText().toString();
+                        String dt = date8.getText().toString();
+                        if(edt.matches("") || dt.matches("วันที่")){
+                            edchk8 = 1;
+                        }
+                        else
+                        {
+                            edchk8 = 0;
+                        }
+                    }
+                    if(vg9 == 0){
+                        String edt = ed9.getText().toString();
+                        String dt = date9.getText().toString();
+                        if(edt.matches("") || dt.matches("วันที่")){
+                            edchk9 = 1;
+                        }
+                        else
+                        {
+                            edchk9 = 0;
+                        }
+                    }
+                    if(vg10 == 0){
+                        String edt = ed10.getText().toString();
+                        String dt = date10.getText().toString();
+                        if(edt.matches("") || dt.matches("วันที่")){
+                            edchk10 = 1;
+                        }
+                        else
+                        {
+                            edchk10 = 0;
+                        }
+                    }
+                    if(vg11 == 0){
+                        String edt = ed11.getText().toString();
+                        String dt = date11.getText().toString();
+                        if(edt.matches("") || dt.matches("วันที่")){
+                            edchk11 = 1;
+                        }
+                        else
+                        {
+                            edchk11 = 0;
+                        }
+                    }
+                    if(vg12 == 0){
+                        String edt = ed12.getText().toString();
+                        String dt = date12.getText().toString();
+                        if(edt.matches("") || dt.matches("วันที่")){
+                            edchk12 = 1;
+                        }
+                        else
+                        {
+                            edchk12 = 0;
+                        }
+                    }
+                    if(vg13 == 0){
+                        String edt = ed13.getText().toString();
+                        String dt = date13.getText().toString();
+                        if(edt.matches("") || dt.matches("วันที่")){
+                            edchk13 = 1;
+                        }
+                        else
+                        {
+                            edchk13 = 0;
+                        }
+                    }
+                    if(vg14 == 0){
+                        String edt = ed14.getText().toString();
+                        String dt = date14.getText().toString();
+                        if(edt.matches("") || dt.matches("วันที่")){
+                            edchk14 = 1;
+                        }
+                        else
+                        {
+                            edchk14 = 0;
+                        }
+                    }
+                    if(vg15 == 0){
+                        String edt = ed15.getText().toString();
+                        String dt = date15.getText().toString();
+                        if(edt.matches("") || dt.matches("วันที่")){
+                            edchk15 = 1;
+                        }
+                        else
+                        {
+                            edchk15 = 0;
+                        }
+                    }
+                    if(vg16 == 0){
+                        String edt = ed16.getText().toString();
+                        String dt = date16.getText().toString();
+                        if(edt.matches("") || dt.matches("วันที่")){
+                            edchk16 = 1;
+                        }
+                        else
+                        {
+                            edchk16 = 0;
+                        }
+                    }
+                    if(vg17 == 0){
+                        String edt = ed17.getText().toString();
+                        String dt = date17.getText().toString();
+                        if(edt.matches("") || dt.matches("วันที่")){
+                            edchk17 = 1;
+                        }
+                        else
+                        {
+                            edchk17 = 0;
+                        }
                     }
 
+                    /// check vg = 1///
+                    if(vg1 == 1){
+                        edchk1 = 0;
+                    }
+                    if(vg2 == 1){
+                        edchk2 = 0;
+                    }
+                    if(vg3 == 1){
+                        edchk3 = 0;
+                    }
+                    if(vg4 == 1){
+                        edchk4 = 0;
+                    }
+                    if(vg5 == 1){
+                        edchk5 = 0;
+                    }
+                    if(vg6 == 1){
+                        edchk6 = 0;
+                    }
+                    if(vg7 == 1){
+                        edchk7 = 0;
+                    }
+                    if(vg8 == 1){
+                        edchk8 = 0;
+                    }
+                    if(vg9 == 1){
+                        edchk9 = 0;
+                    }
+                    if(vg10 == 1){
+                        edchk10 = 0;
+                    }
+                    if(vg11 == 1){
+                        edchk11 = 0;
+                    }
+                    if(vg12 == 1){
+                        edchk12 = 0;
+                    }
+                    if(vg13 == 1){
+                        edchk13 = 0;
+                    }
+                    if(vg14 == 1){
+                        edchk14 = 0;
+                    }
+                    if(vg15 == 1){
+                        edchk15 = 0;
+                    }
+                    if(vg16 == 1){
+                        edchk16 = 0;
+                    }
+                    if(vg17 == 1){
+                        edchk17 = 0;
+                    }
+
+
+
+
+
+
+                    int sumed = edchk1+edchk2+edchk3+edchk4+edchk5+edchk6+edchk7
+                            +edchk8+edchk9+edchk10+edchk11+edchk12+edchk13+edchk14
+                            +edchk15+edchk16+edchk17;
+
+
+
+                    //Toast.makeText(getContext(),"sum ="+sumed,Toast.LENGTH_SHORT).show();
+
+
+                    if(sum != max || sumed >= 1)
+                    {
+                        Toast.makeText(getContext(),"กรุณากรอกข้อมูลให้ครบถ้วน",Toast.LENGTH_SHORT).show();
+                    }
+
+                    /*else if (sumed == max){
+                        Toast.makeText(getContext(),"กรุณากรอกข้อมูลให้ครบถ้วน",Toast.LENGTH_SHORT).show();
+                    }*/
+
+                    else {
+                        int[] allscore = new int[1];
+                        allscore[0] = max - (ii+vg1+vg2+vg3+vg4
+                                +vg5+vg6+vg7+vg8+
+                                vg9+vg10+vg11+vg12+
+                                vg13+vg14+vg15+vg16+vg17);
+
+                        String text[] = new String[64];
+                        text[0] = ed1.getText().toString();
+                        text[1] = ed2.getText().toString();
+                        text[2] = ed3.getText().toString();
+                        text[3] = ed4.getText().toString();
+                        text[4] = ed5.getText().toString();
+                        text[5] = ed6.getText().toString();
+                        text[6] = ed7.getText().toString();
+                        text[7] = ed8.getText().toString();
+                        text[8] = ed9.getText().toString();
+                        text[9] = ed10.getText().toString();
+                        text[10] = ed11.getText().toString();
+                        text[11] = ed12.getText().toString();
+                        text[12] = ed13.getText().toString();
+                        text[13] = ed14.getText().toString();
+                        text[14] = ed15.getText().toString();
+                        text[15] = ed16.getText().toString();
+                        text[16] = ed17.getText().toString();
+
+                        Integer point[] = new Integer[64];
+                        point[0] = vg1;
+                        point[1] = vg2;
+                        point[2] = vg3;
+                        point[3] = vg4;
+                        point[4] = vg5;
+                        point[5] = vg6;
+                        point[6] = vg7;
+                        point[7] = vg8;
+                        point[8] = vg9;
+                        point[9] = vg10;
+                        point[10] = vg11;
+                        point[11] = vg12;
+                        point[12] = vg13;
+                        point[13] = vg14;
+                        point[14] = vg15;
+                        point[15] = vg16;
+                        point[16] = vg17;
+
+
+                        String dd[] = new String[64];
+                        dd[0] = date1.getText().toString();
+                        dd[1] = date2.getText().toString();
+                        dd[2] = date3.getText().toString();
+                        dd[3] = date4.getText().toString();
+                        dd[4] = date5.getText().toString();
+                        dd[5] = date6.getText().toString();
+                        dd[6] = date7.getText().toString();
+                        dd[7] = date8.getText().toString();
+                        dd[8] = date9.getText().toString();
+                        dd[9] = date10.getText().toString();
+                        dd[10] = date11.getText().toString();
+                        dd[11] = date12.getText().toString();
+                        dd[12] = date13.getText().toString();
+                        dd[13] = date14.getText().toString();
+                        dd[14] = date15.getText().toString();
+                        dd[15] = date16.getText().toString();
+                        dd[16] = date17.getText().toString();
+                        try {
+                            connectionSQL = new ConnectionSQL();
+                            Connection con = connectionSQL.CONN();
+                            for (int i = 0 ; i < 17 ;i++)
+                            {
+                                stmt = con.createStatement();
+                                String commands = "insert MAS_PJ " +
+                                        //"select '"+a+"','"+ head[i]+"','"+area+"',GETDATE(),'"+dd[i]+"','"+text[i]+"','"+ point[i] +"','"+az.getText().toString()+"'";
+                                        " VALUES ('"+a+"','"+head[i]+"','"+area+"',CONVERT(VARCHAR(10),GETDATE(),110),'"+dd[i]+"','"+text[i]+"','"+ point[i] +"','"+az.getText().toString()+"',CONVERT(VARCHAR(10),GETDATE(),110))";
+                                PreparedStatement preStmt = con.prepareStatement(commands);
+                                preStmt.executeUpdate();
+                            }
+                            stmt = con.createStatement();
+                            String commands = "insert MAS_PJ_REPORT " +
+                                    //"select '"+a+"','"+ head[i]+"','"+area+"',GETDATE(),'"+dd[i]+"','"+text[i]+"','"+ point[i] +"','"+az.getText().toString()+"'";
+                                    " VALUES ('"+ whcode +"','"+a+"','"+area+"',CONVERT(VARCHAR(10),GETDATE(),110),'"+az.getText().toString()+"','"+allscore[0]+"')";
+                            PreparedStatement preStmt = con.prepareStatement(commands);
+                            preStmt.executeUpdate();
+                            Toast.makeText(getActivity(),"บันทึกสำเร็จ",Toast.LENGTH_SHORT).show();
+                            //เปิดหน้า fragment
+                            //getFragmentManager().executePendingTransactions();
+                            getFragmentManager().popBackStack();
+
+                        }catch (SQLException ex){
+                            Toast.makeText(getActivity(),ex.toString(),Toast.LENGTH_SHORT).show();
+                        } catch (IOError ex) {
+                            Toast.makeText(getActivity(),ex.toString(),Toast.LENGTH_SHORT).show();
+                        } catch (AndroidRuntimeException ex) {
+                            Toast.makeText(getActivity(),ex.toString(),Toast.LENGTH_SHORT).show();
+                        } catch (NullPointerException ex) {
+                            Toast.makeText(getActivity(),ex.toString(),Toast.LENGTH_SHORT).show();
+                        } catch (Exception ex) {
+                            Toast.makeText(getActivity(),ex.toString(),Toast.LENGTH_SHORT).show();
+                        }
+
+                    }
                 }
+
+
+
+
+
             });
 
         }
@@ -1771,134 +2096,392 @@ public class MainFragment extends Fragment{
                             vb5+vb6+vb7+vb8+
                             vb9+vb10+vb11+vb12+
                             vb13+vb14+vb15+vb16+vb17);
-
-                    //Toast.makeText(getContext(),"score : = "+ allscore[0],Toast.LENGTH_SHORT).show();
-                    String text[] = new String[17];
-
-                    text[0] = ed1.getText().toString();
-                    text[1] = ed2.getText().toString();
-                    text[2] = ed3.getText().toString();
-                    text[3] = ed4.getText().toString();
-                    text[4] = ed5.getText().toString();
-                    text[5] = ed6.getText().toString();
-                    text[6] = ed7.getText().toString();
-                    text[7] = ed8.getText().toString();
-                    text[8] = ed9.getText().toString();
-                    text[9] = ed10.getText().toString();
-                    text[10] = ed11.getText().toString();
-                    text[11] = ed12.getText().toString();
-                    text[12] = ed13.getText().toString();
-                    text[13] = ed14.getText().toString();
-                    text[14] = ed15.getText().toString();
-                    text[15] = ed16.getText().toString();
-                    text[16] = ed17.getText().toString();
-
-
-
-                    Integer point[] = new Integer[17];
-                    point[0] = vb1;
-                    point[1] = vb2;
-                    point[2] = vb3;
-                    point[3] = vb4;
-                    point[4] = vb5;
-                    point[5] = vb6;
-                    point[6] = vb7;
-                    point[7] = vb8;
-                    point[8] = vb9;
-                    point[9] = vb10;
-                    point[10] = vb11;
-                    point[11] = vb12;
-                    point[12] = vb13;
-                    point[13] = vb14;
-                    point[14] = vb15;
-                    point[15] = vb16;
-                    point[16] = vb17;
-
-                    String dd[] = new String[17];
-                    dd[0] = date1.getText().toString();
-                    dd[1] = date2.getText().toString();
-                    dd[2] = date3.getText().toString();
-                    dd[3] = date4.getText().toString();
-                    dd[4] = date5.getText().toString();
-                    dd[5] = date6.getText().toString();
-                    dd[6] = date7.getText().toString();
-                    dd[7] = date8.getText().toString();
-                    dd[8] = date9.getText().toString();
-                    dd[9] = date10.getText().toString();
-                    dd[10] = date11.getText().toString();
-                    dd[11] = date12.getText().toString();
-                    dd[12] = date13.getText().toString();
-                    dd[13] = date14.getText().toString();
-                    dd[14] = date15.getText().toString();
-                    dd[15] = date16.getText().toString();
-                    dd[16] = date17.getText().toString();
-
-
-                    try {
-
-                        connectionSQL = new ConnectionSQL();
-
-                        Connection con = connectionSQL.CONN();
-                        for (int i = 0 ; i < 17 ;i++)
+                    ///// check edittext vg1 = 0/////
+                    if(vb1 == 0){
+                        String edt = ed1.getText().toString();
+                        String dt = date1.getText().toString();
+                        if(edt.matches("") || dt.matches("วันที่")){
+                            edchk1 = 1;
+                        }
+                        else
                         {
+                            edchk1 = 0;
+                        }
+                    }
+                    if(vb2 == 0){
+                        String edt = ed2.getText().toString();
+                        String dt = date2.getText().toString();
+                        if(edt.matches("") || dt.matches("วันที่")){
+                            edchk2 = 1;
+                        }
+                        else
+                        {
+                            edchk2 = 0;
+                        }
+                    }
+                    if(vb3 == 0){
+                        String edt = ed3.getText().toString();
+                        String dt = date3.getText().toString();
+                        if(edt.matches("") || dt.matches("วันที่")){
+                            edchk3 = 1;
+                        }
+                        else
+                        {
+                            edchk3 = 0;
+                        }
+                    }
+                    if(vb4 == 0){
+                        String edt = ed4.getText().toString();
+                        String dt = date4.getText().toString();
+                        if(edt.matches("") || dt.matches("วันที่")){
+                            edchk4 = 1;
+                        }
+                        else
+                        {
+                            edchk4 = 0;
+                        }
+                    }
+                    if(vb5 == 0){
+                        String edt = ed5.getText().toString();
+                        String dt = date5.getText().toString();
+                        if(edt.matches("") || dt.matches("วันที่")){
+                            edchk5 = 1;
+                        }
+                        else
+                        {
+                            edchk5 = 0;
+                        }
+                    }
+                    if(vb6 == 0){
+                        String edt = ed6.getText().toString();
+                        String dt = date6.getText().toString();
+                        if(edt.matches("") || dt.matches("วันที่")){
+                            edchk6 = 1;
+                        }
+                        else
+                        {
+                            edchk6 = 0;
+                        }
+                    }
+                    if(vb7 == 0){
+                        String edt = ed7.getText().toString();
+                        String dt = date7.getText().toString();
+                        if(edt.matches("") || dt.matches("วันที่")){
+                            edchk7 = 1;
+                        }
+                        else
+                        {
+                            edchk7 = 0;
+                        }
+                    }
+                    if(vb8 == 0){
+                        String edt = ed8.getText().toString();
+                        String dt = date8.getText().toString();
+                        if(edt.matches("") || dt.matches("วันที่")){
+                            edchk8 = 1;
+                        }
+                        else
+                        {
+                            edchk8 = 0;
+                        }
+                    }
+                    if(vb9 == 0){
+                        String edt = ed9.getText().toString();
+                        String dt = date9.getText().toString();
+                        if(edt.matches("") || dt.matches("วันที่")){
+                            edchk9 = 1;
+                        }
+                        else
+                        {
+                            edchk9 = 0;
+                        }
+                    }
+                    if(vb10 == 0){
+                        String edt = ed10.getText().toString();
+                        String dt = date10.getText().toString();
+                        if(edt.matches("") || dt.matches("วันที่")){
+                            edchk10 = 1;
+                        }
+                        else
+                        {
+                            edchk10 = 0;
+                        }
+                    }
+                    if(vb11 == 0){
+                        String edt = ed11.getText().toString();
+                        String dt = date11.getText().toString();
+                        if(edt.matches("") || dt.matches("วันที่")){
+                            edchk11 = 1;
+                        }
+                        else
+                        {
+                            edchk11 = 0;
+                        }
+                    }
+                    if(vb12 == 0){
+                        String edt = ed12.getText().toString();
+                        String dt = date12.getText().toString();
+                        if(edt.matches("") || dt.matches("วันที่")){
+                            edchk12 = 1;
+                        }
+                        else
+                        {
+                            edchk12 = 0;
+                        }
+                    }
+                    if(vb13 == 0){
+                        String edt = ed13.getText().toString();
+                        String dt = date13.getText().toString();
+                        if(edt.matches("") || dt.matches("วันที่")){
+                            edchk13 = 1;
+                        }
+                        else
+                        {
+                            edchk13 = 0;
+                        }
+                    }
+                    if(vb14 == 0){
+                        String edt = ed14.getText().toString();
+                        String dt = date14.getText().toString();
+                        if(edt.matches("") || dt.matches("วันที่")){
+                            edchk14 = 1;
+                        }
+                        else
+                        {
+                            edchk14 = 0;
+                        }
+                    }
+                    if(vb15 == 0){
+                        String edt = ed15.getText().toString();
+                        String dt = date15.getText().toString();
+                        if(edt.matches("") || dt.matches("วันที่")){
+                            edchk15 = 1;
+                        }
+                        else
+                        {
+                            edchk15 = 0;
+                        }
+                    }
+                    if(vb16 == 0){
+                        String edt = ed16.getText().toString();
+                        String dt = date16.getText().toString();
+                        if(edt.matches("") || dt.matches("วันที่")){
+                            edchk16 = 1;
+                        }
+                        else
+                        {
+                            edchk16 = 0;
+                        }
+                    }
+                    if(vb17 == 0){
+                        String edt = ed17.getText().toString();
+                        String dt = date17.getText().toString();
+                        if(edt.matches("") || dt.matches("วันที่")){
+                            edchk17 = 1;
+                        }
+                        else
+                        {
+                            edchk17 = 0;
+                        }
+                    }
+
+                    /// check vg = 1///
+                    if(vb1 == 1){
+                        edchk1 = 0;
+                    }
+                    if(vb2 == 1){
+                        edchk2 = 0;
+                    }
+                    if(vb3 == 1){
+                        edchk3 = 0;
+                    }
+                    if(vb4 == 1){
+                        edchk4 = 0;
+                    }
+                    if(vb5 == 1){
+                        edchk5 = 0;
+                    }
+                    if(vb6 == 1){
+                        edchk6 = 0;
+                    }
+                    if(vb7 == 1){
+                        edchk7 = 0;
+                    }
+                    if(vb8 == 1){
+                        edchk8 = 0;
+                    }
+                    if(vb9 == 1){
+                        edchk9 = 0;
+                    }
+                    if(vb10 == 1){
+                        edchk10 = 0;
+                    }
+                    if(vb11 == 1){
+                        edchk11 = 0;
+                    }
+                    if(vb12 == 1){
+                        edchk12 = 0;
+                    }
+                    if(vb13 == 1){
+                        edchk13 = 0;
+                    }
+                    if(vb14 == 1){
+                        edchk14 = 0;
+                    }
+                    if(vb15 == 1){
+                        edchk15 = 0;
+                    }
+                    if(vb16 == 1){
+                        edchk16 = 0;
+                    }
+                    if(vb17 == 1){
+                        edchk17 = 0;
+                    }
+
+
+
+                    int sumed = edchk1+edchk2+edchk3+edchk4+edchk5+edchk6+edchk7
+                            +edchk8+edchk9+edchk10+edchk11+edchk12+edchk13+edchk14
+                            +edchk15+edchk16+edchk17;
+
+
+
+                    //Toast.makeText(getContext(),"sum ="+sumed,Toast.LENGTH_SHORT).show();
+
+
+                    if(sumed >= 1)
+                    {
+                        Toast.makeText(getContext(),"กรุณากรอกข้อมูลให้ครบถ้วน",Toast.LENGTH_SHORT).show();
+                    }
+
+                    else{
+                        //Toast.makeText(getContext(),"score : = "+ allscore[0],Toast.LENGTH_SHORT).show();
+                        String text[] = new String[17];
+
+                        text[0] = ed1.getText().toString();
+                        text[1] = ed2.getText().toString();
+                        text[2] = ed3.getText().toString();
+                        text[3] = ed4.getText().toString();
+                        text[4] = ed5.getText().toString();
+                        text[5] = ed6.getText().toString();
+                        text[6] = ed7.getText().toString();
+                        text[7] = ed8.getText().toString();
+                        text[8] = ed9.getText().toString();
+                        text[9] = ed10.getText().toString();
+                        text[10] = ed11.getText().toString();
+                        text[11] = ed12.getText().toString();
+                        text[12] = ed13.getText().toString();
+                        text[13] = ed14.getText().toString();
+                        text[14] = ed15.getText().toString();
+                        text[15] = ed16.getText().toString();
+                        text[16] = ed17.getText().toString();
+
+
+
+                        Integer point[] = new Integer[17];
+                        point[0] = vb1;
+                        point[1] = vb2;
+                        point[2] = vb3;
+                        point[3] = vb4;
+                        point[4] = vb5;
+                        point[5] = vb6;
+                        point[6] = vb7;
+                        point[7] = vb8;
+                        point[8] = vb9;
+                        point[9] = vb10;
+                        point[10] = vb11;
+                        point[11] = vb12;
+                        point[12] = vb13;
+                        point[13] = vb14;
+                        point[14] = vb15;
+                        point[15] = vb16;
+                        point[16] = vb17;
+
+                        String dd[] = new String[17];
+                        dd[0] = date1.getText().toString();
+                        dd[1] = date2.getText().toString();
+                        dd[2] = date3.getText().toString();
+                        dd[3] = date4.getText().toString();
+                        dd[4] = date5.getText().toString();
+                        dd[5] = date6.getText().toString();
+                        dd[6] = date7.getText().toString();
+                        dd[7] = date8.getText().toString();
+                        dd[8] = date9.getText().toString();
+                        dd[9] = date10.getText().toString();
+                        dd[10] = date11.getText().toString();
+                        dd[11] = date12.getText().toString();
+                        dd[12] = date13.getText().toString();
+                        dd[13] = date14.getText().toString();
+                        dd[14] = date15.getText().toString();
+                        dd[15] = date16.getText().toString();
+                        dd[16] = date17.getText().toString();
+
+
+                        try {
+
+                            connectionSQL = new ConnectionSQL();
+
+                            Connection con = connectionSQL.CONN();
+                            for (int i = 0 ; i < 17 ;i++)
+                            {
+                                stmt = con.createStatement();
+                                String commands = "update MAS_PJ " +
+                                        "set POINT = '"+ point[i] +"',TOTAL_POINT = '"+az.getText().toString()+"" +
+                                        "',DOCUPDATE = CONVERT(VARCHAR(10),GETDATE(),110),DATE = '"+dd[i]+"',DOC_TEXT = '"+text[i]+"'  "+
+                                        "where DOC_NUMBER = '"+a+"' and DOC_HEAD like '"+(i+1)+"%' ";
+                                //"select '"+a+"','"+ head[i]+"','"+area+"',GETDATE(),'"+dd[i]+"','"+text[i]+"','"+ point[i] +"','"+az.getText().toString()+"'";
+                                //" VALUES ('"+a+"','"+head[i]+"','"+area+"',CONVERT(VARCHAR(10),GETDATE(),110),'"+dd[i]+"','"+text[i]+"','"+ point[i] +"','"+az.getText().toString()+"',CONVERT(VARCHAR(10),GETDATE(),110))";
+                                PreparedStatement preStmt = con.prepareStatement(commands);
+                                preStmt.executeUpdate();
+                                //Toast.makeText(getContext(),"jkj = "+ (i+1),Toast.LENGTH_SHORT).show();
+                            }
+                            //////////////////////////////////////////////
+
+                            //getFragmentManager().popBackStack();
+
+                        }catch (SQLException ex){
+                            Toast.makeText(getActivity(),ex.toString(),Toast.LENGTH_SHORT).show();
+                        } catch (IOError ex) {
+                            Toast.makeText(getActivity(),ex.toString(),Toast.LENGTH_SHORT).show();
+                        } catch (AndroidRuntimeException ex) {
+                            Toast.makeText(getActivity(),ex.toString(),Toast.LENGTH_SHORT).show();
+                        } catch (NullPointerException ex) {
+                            Toast.makeText(getActivity(),ex.toString(),Toast.LENGTH_SHORT).show();
+                        } catch (Exception ex) {
+                            Toast.makeText(getActivity(),ex.toString(),Toast.LENGTH_SHORT).show();
+                        }
+
+
+                        try {
+                            connectionSQL = new ConnectionSQL();
+                            Connection con = connectionSQL.CONN();
                             stmt = con.createStatement();
-                            String commands = "update MAS_PJ " +
-                                    "set POINT = '"+ point[i] +"',TOTAL_POINT = '"+az.getText().toString()+"" +
-                                    "',DOCUPDATE = CONVERT(VARCHAR(10),GETDATE(),110),DATE = '"+dd[i]+"',DOC_TEXT = '"+text[i]+"'  "+
-                                    "where DOC_NUMBER = '"+a+"' and DOC_HEAD like '"+(i+1)+"%' ";
-                                    //"select '"+a+"','"+ head[i]+"','"+area+"',GETDATE(),'"+dd[i]+"','"+text[i]+"','"+ point[i] +"','"+az.getText().toString()+"'";
-                                    //" VALUES ('"+a+"','"+head[i]+"','"+area+"',CONVERT(VARCHAR(10),GETDATE(),110),'"+dd[i]+"','"+text[i]+"','"+ point[i] +"','"+az.getText().toString()+"',CONVERT(VARCHAR(10),GETDATE(),110))";
+                            String commands = "update MAS_PJ_REPORT " +
+                                    "set COUNTEDIT = '"+allscore[0]+"',TOTAL_POINT = '"+az.getText().toString()+"' " +
+                                    "where DOC_NUMBER = '"+a+"'";
+                            //"select '"+a+"','"+ head[i]+"','"+area+"',GETDATE(),'"+dd[i]+"','"+text[i]+"','"+ point[i] +"','"+az.getText().toString()+"'";
+                            //" VALUES ('"+ whcode +"','"+a+"','"+area+"',CONVERT(VARCHAR(10),GETDATE(),110),'"+az.getText().toString()+"','"+allscore[0]+"')";
                             PreparedStatement preStmt = con.prepareStatement(commands);
                             preStmt.executeUpdate();
-                            //Toast.makeText(getContext(),"jkj = "+ (i+1),Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getActivity(),"บันทึกสำเร็จ",Toast.LENGTH_SHORT).show();
+                            //เปิดหน้า fragment
+                            //getFragmentManager().executePendingTransactions();
+                            //////////////////////////////////////////////
+
+                        }catch (SQLException ex){
+                            Toast.makeText(getActivity(),ex.toString(),Toast.LENGTH_SHORT).show();
+                        } catch (IOError ex) {
+                            Toast.makeText(getActivity(),ex.toString(),Toast.LENGTH_SHORT).show();
+                        } catch (AndroidRuntimeException ex) {
+                            Toast.makeText(getActivity(),ex.toString(),Toast.LENGTH_SHORT).show();
+                        } catch (NullPointerException ex) {
+                            Toast.makeText(getActivity(),ex.toString(),Toast.LENGTH_SHORT).show();
+                        } catch (Exception ex) {
+                            Toast.makeText(getActivity(),ex.toString(),Toast.LENGTH_SHORT).show();
                         }
-                        //////////////////////////////////////////////
 
-                        //getFragmentManager().popBackStack();
-
-                    }catch (SQLException ex){
-                        Toast.makeText(getActivity(),ex.toString(),Toast.LENGTH_SHORT).show();
-                    } catch (IOError ex) {
-                        Toast.makeText(getActivity(),ex.toString(),Toast.LENGTH_SHORT).show();
-                    } catch (AndroidRuntimeException ex) {
-                        Toast.makeText(getActivity(),ex.toString(),Toast.LENGTH_SHORT).show();
-                    } catch (NullPointerException ex) {
-                        Toast.makeText(getActivity(),ex.toString(),Toast.LENGTH_SHORT).show();
-                    } catch (Exception ex) {
-                        Toast.makeText(getActivity(),ex.toString(),Toast.LENGTH_SHORT).show();
+                        getFragmentManager().popBackStack();
                     }
-
-
-                    try {
-                        connectionSQL = new ConnectionSQL();
-                        Connection con = connectionSQL.CONN();
-                        stmt = con.createStatement();
-                        String commands = "update MAS_PJ_REPORT " +
-                                "set COUNTEDIT = '"+allscore[0]+"',TOTAL_POINT = '"+az.getText().toString()+"' " +
-                                "where DOC_NUMBER = '"+a+"'";
-                        //"select '"+a+"','"+ head[i]+"','"+area+"',GETDATE(),'"+dd[i]+"','"+text[i]+"','"+ point[i] +"','"+az.getText().toString()+"'";
-                        //" VALUES ('"+ whcode +"','"+a+"','"+area+"',CONVERT(VARCHAR(10),GETDATE(),110),'"+az.getText().toString()+"','"+allscore[0]+"')";
-                        PreparedStatement preStmt = con.prepareStatement(commands);
-                        preStmt.executeUpdate();
-                        Toast.makeText(getActivity(),"บันทึกสำเร็จ",Toast.LENGTH_SHORT).show();
-                        //เปิดหน้า fragment
-                        //getFragmentManager().executePendingTransactions();
-                        //////////////////////////////////////////////
-
-                    }catch (SQLException ex){
-                        Toast.makeText(getActivity(),ex.toString(),Toast.LENGTH_SHORT).show();
-                    } catch (IOError ex) {
-                        Toast.makeText(getActivity(),ex.toString(),Toast.LENGTH_SHORT).show();
-                    } catch (AndroidRuntimeException ex) {
-                        Toast.makeText(getActivity(),ex.toString(),Toast.LENGTH_SHORT).show();
-                    } catch (NullPointerException ex) {
-                        Toast.makeText(getActivity(),ex.toString(),Toast.LENGTH_SHORT).show();
-                    } catch (Exception ex) {
-                        Toast.makeText(getActivity(),ex.toString(),Toast.LENGTH_SHORT).show();
-                    }
-
-                    getFragmentManager().popBackStack();
-
 
                 }
             });
