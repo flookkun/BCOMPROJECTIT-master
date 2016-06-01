@@ -54,7 +54,7 @@ public class Login extends AppCompatActivity implements GoogleApiClient.Connecti
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getSupportActionBar().hide();
+//        getSupportActionBar().hide();
         setContentView(R.layout.activity_login);
         connectionSQL = new ConnectionSQL();
         etuserid = (EditText) findViewById(R.id.edtuserid);
@@ -71,10 +71,6 @@ public class Login extends AppCompatActivity implements GoogleApiClient.Connecti
                 .addConnectionCallbacks(this)
                 .addOnConnectionFailedListener(this)
                 .build();
-
-
-
-
 
 
 

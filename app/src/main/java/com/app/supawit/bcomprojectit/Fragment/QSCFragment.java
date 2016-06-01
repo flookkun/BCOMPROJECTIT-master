@@ -40,7 +40,7 @@ public class QSCFragment extends Fragment {
         // Required empty public constructor
     }
 
-    @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
+    @TargetApi(23)
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -52,6 +52,7 @@ public class QSCFragment extends Fragment {
         final String area = bundle.getString("area");
         final String abbname = bundle.getString("wh");
         final Integer check = bundle.getInt("chk");
+        final String abn = bundle.getString("abn");
         final TextView txt = (TextView) v.findViewById(R.id.txtqsc1);
 
         //Toast.makeText(getContext(),"cc = "+check,Toast.LENGTH_SHORT).show();
@@ -75,6 +76,7 @@ public class QSCFragment extends Fragment {
                     Bundle bundle = new Bundle();
                     bundle.putString("Key",test);
                     bundle.putInt("chk",check);
+                    bundle.putString("abn",abn);
                     fragment.setArguments(bundle);
                     FragmentManager fragmentManager = getFragmentManager();
                     FragmentTransaction fragTransaction = fragmentManager.beginTransaction();
@@ -98,6 +100,7 @@ public class QSCFragment extends Fragment {
                     Bundle bundle = new Bundle();
                     bundle.putString("Key",test);
                     bundle.putInt("chk",check);
+                    bundle.putString("abn",abn);
                     fragment.setArguments(bundle);
                     FragmentManager fragmentManager = getFragmentManager();
                     FragmentTransaction fragTransaction = fragmentManager.beginTransaction();
@@ -114,6 +117,7 @@ public class QSCFragment extends Fragment {
                     Bundle bundle = new Bundle();
                     bundle.putString("Key",test);
                     bundle.putInt("chk",check);
+                    bundle.putString("abn",abn);
                     fragment.setArguments(bundle);
                     FragmentManager fragmentManager = getFragmentManager();
                     FragmentTransaction fragTransaction = fragmentManager.beginTransaction();

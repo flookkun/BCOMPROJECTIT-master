@@ -80,7 +80,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="8dp"
-                    android:text="วันที่"
+                    android:text="เลือกวันที่"
                     android:textColor="#000"
                     android:visibility="invisible"/>
             </LinearLayout>

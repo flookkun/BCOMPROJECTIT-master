@@ -12,6 +12,7 @@ import android.widget.RelativeLayout;
 
 import com.app.supawit.bcomprojectit.Fragment.HistoryFragment;
 import com.app.supawit.bcomprojectit.Fragment.QSCFragment;
+import com.app.supawit.bcomprojectit.Fragment.WarehousehistoryFragment;
 import com.app.supawit.bcomprojectit.Fragment.warehouseFragment;
 
 
@@ -101,14 +102,12 @@ public class HOME extends Fragment implements View.OnClickListener  {
 
 
 
-            QSCFragment fragment = new QSCFragment();
+            WarehousehistoryFragment fragment = new WarehousehistoryFragment();
 
             Bundle bundle = new Bundle();
             bundle.putString("Key",data);
             bundle.putInt("chk",0);
             fragment.setArguments(bundle);
-
-
 
             FragmentManager fragmentManager = getFragmentManager();
             FragmentTransaction fragTransacrion = fragmentManager.beginTransaction();

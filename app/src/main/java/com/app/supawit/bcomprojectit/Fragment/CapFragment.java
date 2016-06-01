@@ -2,6 +2,7 @@ package com.app.supawit.bcomprojectit.Fragment;
 
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
@@ -52,6 +53,7 @@ public class CapFragment extends Fragment {
     ConnectionSQL connectionSQL;
     Statement stmt = null;
     ResultSet rs = null;
+    int value1 = 0,value2 = 0,value3 = 0,value4 = 0,value5 = 0,value6 = 0;
 
     public static final int REQUEST_CAMERA = 1;
 
@@ -79,6 +81,7 @@ public class CapFragment extends Fragment {
         btncap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                        value1 = 1;
                         Intent it = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                         startActivityForResult(it,REQUEST_CAMERA);
                         btncap.setVisibility(View.INVISIBLE);
@@ -88,6 +91,7 @@ public class CapFragment extends Fragment {
         image2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                value2 = 1;
                 Intent it = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                 startActivityForResult(it,2);
             }
@@ -95,6 +99,7 @@ public class CapFragment extends Fragment {
         image3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                value3 = 1;
                 Intent it = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                 startActivityForResult(it,3);
             }
@@ -102,6 +107,8 @@ public class CapFragment extends Fragment {
         image4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                value4 = 1;
                 Intent it = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                 startActivityForResult(it,4);
             }
@@ -109,6 +116,8 @@ public class CapFragment extends Fragment {
         image5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                value5 = 1;
                 Intent it = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                 startActivityForResult(it,5);
             }
@@ -116,6 +125,8 @@ public class CapFragment extends Fragment {
         image6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                value6 = 1;
                 Intent it = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                 startActivityForResult(it,6);
             }
@@ -127,33 +138,40 @@ public class CapFragment extends Fragment {
             @Override
             public void onClick(View view) {
 
-                try {
-                    connectionSQL = new ConnectionSQL();
-                    Connection con = connectionSQL.CONN();
-                    for(int i = 0 ; i < 5 ; i++) {
-                        stmt = con.createStatement();
-                        String commands = "Insert into ImgTbl2 (ImgName,Img) values ('"
-                                + ss + "','" + encodedImage[i]
-                                + "')";
-                        PreparedStatement preStmt = con.prepareStatement(commands);
-                        preStmt.executeUpdate();
-                    }
-                    Toast.makeText(getActivity(),"บันทึกสำเร็จ",Toast.LENGTH_SHORT).show();
-                    //เปิดหน้า fragment
-                    //getFragmentManager().executePendingTransactions();
-                    getFragmentManager().popBackStack();
-                }catch (SQLException ex){
-                    Toast.makeText(getActivity(),ex.toString(),Toast.LENGTH_SHORT).show();
-                } catch (IOError ex) {
-                    Toast.makeText(getActivity(),ex.toString(),Toast.LENGTH_SHORT).show();
-                } catch (AndroidRuntimeException ex) {
-                    Toast.makeText(getActivity(),ex.toString(),Toast.LENGTH_SHORT).show();
-                } catch (NullPointerException ex) {
-                    Toast.makeText(getActivity(),ex.toString(),Toast.LENGTH_SHORT).show();
-                } catch (Exception ex) {
-                    Toast.makeText(getActivity(),ex.toString(),Toast.LENGTH_SHORT).show();
-                }
+                int max = 6;
+                int sum = value1+value2+value3+value4+value5+value6;
 
+                if(max != sum){
+
+                    Toast.makeText(getContext(),"กรุณาถ่ายภาพให้ครบตามจำนวน 6 ภาพ",Toast.LENGTH_SHORT).show();
+                }else{
+                    try {
+                        connectionSQL = new ConnectionSQL();
+                        Connection con = connectionSQL.CONN();
+                        for(int i = 0 ; i < 6 ; i++) {
+                            stmt = con.createStatement();
+                            String commands = "Insert into ImgTbl2 (ImgName,Img,Point) values ('"
+                                    + ss + "','" + encodedImage[i] +"','" + (i+1)
+                                    + "')";
+                            PreparedStatement preStmt = con.prepareStatement(commands);
+                            preStmt.executeUpdate();
+                        }
+                        Toast.makeText(getActivity(),"บันทึกสำเร็จ",Toast.LENGTH_SHORT).show();
+                        //เปิดหน้า fragment
+                        //getFragmentManager().executePendingTransactions();
+                        getFragmentManager().popBackStack();
+                    }catch (SQLException ex){
+                        Toast.makeText(getActivity(),ex.toString(),Toast.LENGTH_SHORT).show();
+                    } catch (IOError ex) {
+                        Toast.makeText(getActivity(),ex.toString(),Toast.LENGTH_SHORT).show();
+                    } catch (AndroidRuntimeException ex) {
+                        Toast.makeText(getActivity(),ex.toString(),Toast.LENGTH_SHORT).show();
+                    } catch (NullPointerException ex) {
+                        Toast.makeText(getActivity(),ex.toString(),Toast.LENGTH_SHORT).show();
+                    } catch (Exception ex) {
+                        Toast.makeText(getActivity(),ex.toString(),Toast.LENGTH_SHORT).show();
+                    }
+                }
                /* Toast.makeText(getActivity(),"บันทึกสำเร็จ",Toast.LENGTH_SHORT).show();
                 //เปิดหน้า fragment
                 //getFragmentManager().executePendingTransactions();

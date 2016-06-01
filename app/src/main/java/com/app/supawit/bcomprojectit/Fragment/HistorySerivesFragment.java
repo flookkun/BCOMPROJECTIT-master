@@ -34,7 +34,7 @@ public class HistorySerivesFragment extends Fragment {
     ArrayList<String> list1,list2,list3,list4,list5,list6;
     Statement stmt = null;
     ResultSet rs = null;
-    String warea,doc,abbname,area,docdate,point,ce;
+    String warea,doc,abbname,area,docdate,point,ce,abn;
     ListView lv8;
     String[] docarray,abbnamearray,areaarray,docdatearray,pointarray,countedit;
 
@@ -54,6 +54,7 @@ public class HistorySerivesFragment extends Fragment {
         getActivity().setTitle("ประวัติย้อนหลัง Services");
         Bundle bundle  = this.getArguments();
         warea = bundle.getString("Key");
+        abn = bundle.getString("abn");
 
         ///Query///
 
@@ -63,7 +64,7 @@ public class HistorySerivesFragment extends Fragment {
             stmt = con.createStatement();
             String query =
 
-                    "select * from MAS_PJ_REPORT_S where arcode = '"+warea+"'";
+                    "select * from MAS_PJ_REPORT_S where arcode = '"+warea+"' and abbname = '"+abn+"' ";
 
             rs = stmt.executeQuery(query);
             list1 = new ArrayList<>();

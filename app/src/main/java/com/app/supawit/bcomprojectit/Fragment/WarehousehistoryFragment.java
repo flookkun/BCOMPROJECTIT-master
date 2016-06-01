@@ -6,14 +6,11 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.BaseAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -21,34 +18,31 @@ import android.widget.Toast;
 
 import com.app.supawit.bcomprojectit.ConnectionSQL;
 import com.app.supawit.bcomprojectit.R;
-import com.app.supawit.bcomprojectit.View.CustomAdepter;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.Locale;
-
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class warehouseFragment extends Fragment {
+public class WarehousehistoryFragment extends Fragment {
+
 
     private ListView lv;
-
+    String abbname;
     ArrayAdapter<String> adapter;
-    int check;
     EditText inputSearch;
-    String area;
     ConnectionSQL connectionSQL;
     ArrayList<String> list;
     Statement stmt = null;
     ResultSet rs = null;
+    String area;
+    int chk;
 
-    String abbname;
-    public warehouseFragment() {
+    public WarehousehistoryFragment() {
         // Required empty public constructor
     }
 
@@ -57,19 +51,18 @@ public class warehouseFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v =  inflater.inflate(R.layout.fragment_warehouse,null);
-
+        View v = inflater.inflate(R.layout.fragment_warehousehistory, null);
         Bundle bundle  = this.getArguments();
         area = bundle.getString("Key");
-        check = bundle.getInt("chk");
+        chk = bundle.getInt("chk");
+        getActivity().setTitle("สาขาที่ตรวจแล้ว");
 
-        ///// เพิ่ม where area ตรงนี้////
         try {
             connectionSQL = new ConnectionSQL();
             Connection con = connectionSQL.CONN();
             stmt = con.createStatement();
             String query =
-                    "select *from Tmp_whcode where ARCODE = '"+area+"' ";
+                    "select *from MAS_PJ_REPORT where ARCODE = '"+area +"'";
 
             rs = stmt.executeQuery(query);
 
@@ -77,65 +70,19 @@ public class warehouseFragment extends Fragment {
 
             while(rs.next()) {
                 abbname = rs.getString("ABBNAME");
-                String whcode = rs.getString("WHCODE");
-                list.add(whcode + " : " + abbname);
+                list.add(abbname);
             }
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
-
-
-        /*String products[] = {"1001 : CENL", "1002 : MBKC", "1006 : CENS", "1007 : MALG", "1008 : LOTJ",
-                "1009 : LOTB", "1010 : MALR",
-                "1011 : MALT", "1012 : CENP", "1013 : LOTL", "1014 : CJUR","5066 : BCASW"
-                ,"5013 : BCBCB","5048 : BCBCT","5039 : BCBHM","5057 : BCBKB","5030 : BCBNS","5016 : BCBRD"
-                ,"5045 : BCBSP","7001 : BMSCSN","7002 : BMFPR","7003 : BMCCM","7004 : BMFSI","7005 : BMCSM"};*/
-        //list = new ArrayList<String>();
-       // for (int i = 0; i < abbname.length(); ++i) {
-           // list.add(abbname);
-        //}
-
         lv = (ListView) v.findViewById(R.id.list_view);
-        inputSearch = (EditText) v.findViewById(R.id.inputsearch);
-
-        // Adding items to listview
         adapter = new ArrayAdapter<>(getActivity(), R.layout.list_item, R.id.product_name, list);
         //StableArrayAdapter adapter = new StableArrayAdapter(getActivity(),R.layout.list_item,list);
         lv.setAdapter(adapter);
         lv.setOnItemClickListener(new ItemList());
 
-        /**
-         * Enabling Search Filter
-         * **/
-        inputSearch.addTextChangedListener(new TextWatcher() {
-
-            @Override
-            public void onTextChanged(CharSequence cs, int arg1, int arg2, int arg3) {
-                // When user changed the Text
-
-                //warehouseFragment.this.adapter.getFilter().filter(cs);
-
-            }
-
-            @Override
-            public void beforeTextChanged(CharSequence arg0, int arg1, int arg2,
-                                          int arg3) {
-                // TODO Auto-generated method stub
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable arg0) {
-                // TODO Auto-generated method stub
-
-                String text = inputSearch.getText().toString().toLowerCase(Locale.getDefault());
-                adapter.getFilter().filter(text);
-
-            }
-
-        });
         FloatingActionButton fab = (FloatingActionButton) v.findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -150,31 +97,27 @@ public class warehouseFragment extends Fragment {
         return v;
     }
 
-
-    class ItemList implements AdapterView.OnItemClickListener{
+    class ItemList implements AdapterView.OnItemClickListener {
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
             ViewGroup vg = (ViewGroup) view;
             TextView txt = (TextView) vg.findViewById(R.id.product_name);
-            //Toast.makeText(getActivity(),txt.getText().toString(),Toast.LENGTH_SHORT).show();
+            //Toast.makeText(getActivity(), txt.getText().toString(), Toast.LENGTH_SHORT).show();
 
-            menuQAFragment fragment = new menuQAFragment();
+            QSCFragment fragment = new QSCFragment();
             Bundle bundle = new Bundle();
-            bundle.putString("Key",txt.getText().toString());
-            bundle.putString("area",area);
-            bundle.putInt("chk",check);
+            //bundle.putString("Key", txt.getText().toString());
+            bundle.putString("Key",area);
+            bundle.putString("abn",txt.getText().toString());
+            bundle.putInt("chk",0);
             fragment.setArguments(bundle);
             FragmentManager fragmentManager = getFragmentManager();
             FragmentTransaction fragTransaction = fragmentManager.beginTransaction();
             //fragTransaction.replace(R.id.fragment_con,fragment);
-            fragTransaction.replace(R.id.fragment_con,fragment).addToBackStack(null).commit();
-
+            fragTransaction.replace(R.id.fragment_con, fragment).addToBackStack(null).commit();
 
 
         }
-
-
-
     }
 
 }

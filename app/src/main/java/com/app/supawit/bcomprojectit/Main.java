@@ -18,6 +18,7 @@ import android.widget.TextView;
 import com.app.supawit.bcomprojectit.Fragment.EditFragment;
 import com.app.supawit.bcomprojectit.Fragment.HistoryFragment;
 import com.app.supawit.bcomprojectit.Fragment.QSCFragment;
+import com.app.supawit.bcomprojectit.Fragment.WarehousehistoryFragment;
 import com.app.supawit.bcomprojectit.Fragment.menuQAFragment;
 
 import java.sql.Connection;
@@ -38,28 +39,17 @@ public class Main extends AppCompatActivity implements NavigationView.OnNavigati
     Toolbar toolbar = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_main);
 
-
-
         //Set Fragment
-       /* HOME fragment = new HOME();
-        android.support.v4.app.FragmentTransaction fragmentTransaction =
-                getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.fragment_con,fragment);
-        fragmentTransaction.commit();*/
         if(savedInstanceState == null)
         {
             area = getIntent().getExtras().getString("STCODE");
             HOME fragment = new HOME();
-
             Bundle bundle = new Bundle();
             bundle.putString("Key",area);
             fragment.setArguments(bundle);
-
 
             android.support.v4.app.FragmentTransaction fragmentTransaction =
                     getSupportFragmentManager().beginTransaction();
@@ -68,18 +58,8 @@ public class Main extends AppCompatActivity implements NavigationView.OnNavigati
         }
 
 
-
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });*/
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -152,26 +132,10 @@ public class Main extends AppCompatActivity implements NavigationView.OnNavigati
 
         if (id == R.id.nav_home) {
 
-            /*HOME fragment = new HOME();
-            android.support.v4.app.FragmentTransaction fragmentTransaction =
-                    getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.fragment_con,fragment).commit();*/
-
             android.support.v4.app.FragmentManager fragmentManager = getSupportFragmentManager();
             fragmentManager.executePendingTransactions();
             fragmentManager.popBackStack("tag",1);
             fragmentManager.executePendingTransactions();
-
-            //HOME fragment = new HOME();
-            //FragmentManager fragmentManager = getFragmentManager();
-            //FragmentTransaction fragTransaction = fragmentManager.beginTransaction();
-            //fragTransaction.replace(R.id.fragment_con,fragment);
-            //fragTransaction.replace(R.id.fragment_con,fragment).addToBackStack(null).commit();
-            //HOME fragment = new HOME();
-            //android.support.v4.app.FragmentTransaction fragmentTransaction =
-            //        getSupportFragmentManager().beginTransaction();
-            //fragmentTransaction.replace(R.id.fragment_con,fragment).addToBackStack(null).commit();
-
 
         }
         else if (id == R.id.nav_manage) {
@@ -196,9 +160,10 @@ public class Main extends AppCompatActivity implements NavigationView.OnNavigati
         }
         else if (id == R.id.nav_history){
 
-            QSCFragment historyFragment = new QSCFragment();
+            WarehousehistoryFragment historyFragment = new WarehousehistoryFragment();
             Bundle bundle = new Bundle();
             bundle.putString("Key",area);
+            bundle.putInt("chk",0);
             historyFragment.setArguments(bundle);
 
             android.support.v4.app.FragmentTransaction fragTransaction =

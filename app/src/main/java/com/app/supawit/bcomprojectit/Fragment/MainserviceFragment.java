@@ -930,9 +930,11 @@ public class MainserviceFragment extends Fragment {
 
                     ///// check edittext vg1 = 0/////
                     if(vg1 == 0){
+                        ed1.setError("กรุณาข้อมูลให้ครบถ้วน");
+                        ed1.requestFocus();
                         String edt = ed1.getText().toString();
                         String dt = date1.getText().toString();
-                        if(edt.matches("") || dt.matches("วันที่")){
+                        if(edt.matches("") || dt.matches("เลือกวันที่")){
                             edchk1 = 1;
                         }
                         else
@@ -941,9 +943,11 @@ public class MainserviceFragment extends Fragment {
                         }
                     }
                     if(vg2 == 0){
+                        ed2.setError("กรุณาข้อมูลให้ครบถ้วน");
+                        ed2.requestFocus();
                         String edt = ed2.getText().toString();
                         String dt = date2.getText().toString();
-                        if(edt.matches("") || dt.matches("วันที่")){
+                        if(edt.matches("") || dt.matches("เลือกวันที่")){
                             edchk2 = 1;
                         }
                         else
@@ -952,9 +956,11 @@ public class MainserviceFragment extends Fragment {
                         }
                     }
                     if(vg3 == 0){
+                        ed3.setError("กรุณาข้อมูลให้ครบถ้วน");
+                        ed3.requestFocus();
                         String edt = ed3.getText().toString();
                         String dt = date3.getText().toString();
-                        if(edt.matches("") || dt.matches("วันที่")){
+                        if(edt.matches("") || dt.matches("เลือกวันที่")){
                             edchk3 = 1;
                         }
                         else
@@ -963,9 +969,11 @@ public class MainserviceFragment extends Fragment {
                         }
                     }
                     if(vg4 == 0){
+                        ed4.setError("กรุณาข้อมูลให้ครบถ้วน");
+                        ed4.requestFocus();
                         String edt = ed4.getText().toString();
                         String dt = date4.getText().toString();
-                        if(edt.matches("") || dt.matches("วันที่")){
+                        if(edt.matches("") || dt.matches("เลือกวันที่")){
                             edchk4 = 1;
                         }
                         else
@@ -974,9 +982,11 @@ public class MainserviceFragment extends Fragment {
                         }
                     }
                     if(vg5 == 0){
+                        ed5.setError("กรุณาข้อมูลให้ครบถ้วน");
+                        ed5.requestFocus();
                         String edt = ed5.getText().toString();
                         String dt = date5.getText().toString();
-                        if(edt.matches("") || dt.matches("วันที่")){
+                        if(edt.matches("") || dt.matches("เลือกวันที่")){
                             edchk5 = 1;
                         }
                         else
@@ -985,9 +995,11 @@ public class MainserviceFragment extends Fragment {
                         }
                     }
                     if(vg6 == 0){
+                        ed6.setError("กรุณาข้อมูลให้ครบถ้วน");
+                        ed6.requestFocus();
                         String edt = ed6.getText().toString();
                         String dt = date6.getText().toString();
-                        if(edt.matches("") || dt.matches("วันที่")){
+                        if(edt.matches("") || dt.matches("เลือกวันที่")){
                             edchk6 = 1;
                         }
                         else
@@ -996,9 +1008,11 @@ public class MainserviceFragment extends Fragment {
                         }
                     }
                     if(vg7 == 0){
+                        ed7.setError("กรุณาข้อมูลให้ครบถ้วน");
+                        ed7.requestFocus();
                         String edt = ed7.getText().toString();
                         String dt = date7.getText().toString();
-                        if(edt.matches("") || dt.matches("วันที่")){
+                        if(edt.matches("") || dt.matches("เลือกวันที่")){
                             edchk7 = 1;
                         }
                         else
@@ -1007,9 +1021,11 @@ public class MainserviceFragment extends Fragment {
                         }
                     }
                     if(vg8 == 0){
+                        ed8.setError("กรุณาข้อมูลให้ครบถ้วน");
+                        ed8.requestFocus();
                         String edt = ed8.getText().toString();
                         String dt = date8.getText().toString();
-                        if(edt.matches("") || dt.matches("วันที่")){
+                        if(edt.matches("") || dt.matches("เลือกวันที่")){
                             edchk8 = 1;
                         }
                         else
@@ -1018,9 +1034,11 @@ public class MainserviceFragment extends Fragment {
                         }
                     }
                     if(vg9 == 0){
+                        ed9.setError("กรุณาข้อมูลให้ครบถ้วน");
+                        ed9.requestFocus();
                         String edt = ed9.getText().toString();
                         String dt = date9.getText().toString();
-                        if(edt.matches("") || dt.matches("วันที่")){
+                        if(edt.matches("") || dt.matches("เลือกวันที่")){
                             edchk9 = 1;
                         }
                         else
@@ -1029,9 +1047,11 @@ public class MainserviceFragment extends Fragment {
                         }
                     }
                     if(vg10 == 0){
+                        ed10.setError("กรุณาข้อมูลให้ครบถ้วน");
+                        ed10.requestFocus();
                         String edt = ed10.getText().toString();
                         String dt = date10.getText().toString();
-                        if(edt.matches("") || dt.matches("วันที่")){
+                        if(edt.matches("") || dt.matches("เลือกวันที่")){
                             edchk10 = 1;
                         }
                         else
@@ -1040,9 +1060,11 @@ public class MainserviceFragment extends Fragment {
                         }
                     }
                     if(vg11 == 0){
+                        ed11.setError("กรุณาข้อมูลให้ครบถ้วน");
+                        ed11.requestFocus();
                         String edt = ed11.getText().toString();
                         String dt = date11.getText().toString();
-                        if(edt.matches("") || dt.matches("วันที่")){
+                        if(edt.matches("") || dt.matches("เลือกวันที่")){
                             edchk11 = 1;
                         }
                         else
@@ -1051,9 +1073,11 @@ public class MainserviceFragment extends Fragment {
                         }
                     }
                     if(vg12 == 0){
+                        ed12.setError("กรุณาข้อมูลให้ครบถ้วน");
+                        ed12.requestFocus();
                         String edt = ed12.getText().toString();
                         String dt = date12.getText().toString();
-                        if(edt.matches("") || dt.matches("วันที่")){
+                        if(edt.matches("") || dt.matches("เลือกวันที่")){
                             edchk12 = 1;
                         }
                         else
@@ -1062,9 +1086,11 @@ public class MainserviceFragment extends Fragment {
                         }
                     }
                     if(vg13 == 0){
+                        ed13.setError("กรุณาข้อมูลให้ครบถ้วน");
+                        ed13.requestFocus();
                         String edt = ed13.getText().toString();
                         String dt = date13.getText().toString();
-                        if(edt.matches("") || dt.matches("วันที่")){
+                        if(edt.matches("") || dt.matches("เลือกวันที่")){
                             edchk13 = 1;
                         }
                         else
@@ -1073,9 +1099,11 @@ public class MainserviceFragment extends Fragment {
                         }
                     }
                     if(vg14 == 0){
+                        ed14.setError("กรุณาข้อมูลให้ครบถ้วน");
+                        ed14.requestFocus();
                         String edt = ed14.getText().toString();
                         String dt = date14.getText().toString();
-                        if(edt.matches("") || dt.matches("วันที่")){
+                        if(edt.matches("") || dt.matches("เลือกวันที่")){
                             edchk14 = 1;
                         }
                         else
@@ -1084,9 +1112,11 @@ public class MainserviceFragment extends Fragment {
                         }
                     }
                     if(vg15 == 0){
+                        ed15.setError("กรุณาข้อมูลให้ครบถ้วน");
+                        ed15.requestFocus();
                         String edt = ed15.getText().toString();
                         String dt = date15.getText().toString();
-                        if(edt.matches("") || dt.matches("วันที่")){
+                        if(edt.matches("") || dt.matches("เลือกวันที่")){
                             edchk15 = 1;
                         }
                         else
@@ -1095,9 +1125,11 @@ public class MainserviceFragment extends Fragment {
                         }
                     }
                     if(vg16 == 0){
+                        ed16.setError("กรุณาข้อมูลให้ครบถ้วน");
+                        ed16.requestFocus();
                         String edt = ed16.getText().toString();
                         String dt = date16.getText().toString();
-                        if(edt.matches("") || dt.matches("วันที่")){
+                        if(edt.matches("") || dt.matches("เลือกวันที่")){
                             edchk16 = 1;
                         }
                         else
@@ -1106,9 +1138,11 @@ public class MainserviceFragment extends Fragment {
                         }
                     }
                     if(vg17 == 0){
+                        ed17.setError("กรุณาข้อมูลให้ครบถ้วน");
+                        ed17.requestFocus();
                         String edt = ed17.getText().toString();
                         String dt = date17.getText().toString();
-                        if(edt.matches("") || dt.matches("วันที่")){
+                        if(edt.matches("") || dt.matches("เลือกวันที่")){
                             edchk17 = 1;
                         }
                         else
@@ -1117,9 +1151,11 @@ public class MainserviceFragment extends Fragment {
                         }
                     }
                     if(vg18 == 0){
+                        ed18.setError("กรุณาข้อมูลให้ครบถ้วน");
+                        ed18.requestFocus();
                         String edt = ed18.getText().toString();
                         String dt = date18.getText().toString();
-                        if(edt.matches("") || dt.matches("วันที่")){
+                        if(edt.matches("") || dt.matches("เลือกวันที่")){
                             edchk18 = 1;
                         }
                         else
@@ -1276,7 +1312,7 @@ public class MainserviceFragment extends Fragment {
                                 stmt = con.createStatement();
                                 String commands = "insert MAS_PJ_S " +
                                         //"select '"+a+"','"+ head[i]+"','"+area+"',GETDATE(),'"+dd[i]+"','"+text[i]+"','"+ point[i] +"','"+az.getText().toString()+"'";
-                                        " VALUES ('"+a+"','"+head[i]+"','"+area+"',CONVERT(VARCHAR(10),GETDATE(),110),'"+dd[i]+"','"+text[i]+"','"+ point[i] +"','"+score.getText().toString()+"',CONVERT(VARCHAR(10),GETDATE(),110))";
+                                        " VALUES ('"+a+"','"+head[i]+"','"+area+"',CONVERT(VARCHAR(10),GETDATE(),110),'"+dd[i]+"','"+text[i]+"','"+ point[i] +"','"+score.getText().toString()+"',CONVERT(VARCHAR(10),GETDATE(),110),'"+a.substring(0,4)+"')";
                                 PreparedStatement preStmt = con.prepareStatement(commands);
                                 preStmt.executeUpdate();
                             }
@@ -2140,6 +2176,78 @@ public class MainserviceFragment extends Fragment {
                             vb13+vb14+vb15+vb16+vb17+vb18+"/18");
                 }
             });
+            if(vb1 == 0){
+                ed1.setError("ไม่ผ่าน");
+                ed1.requestFocus();
+            }
+            if(vb2 == 0){
+                ed2.setError("ไม่ผ่าน");
+                ed2.requestFocus();
+            }
+            if(vb3 == 0){
+                ed3.setError("ไม่ผ่าน");
+                ed3.requestFocus();
+            }
+            if(vb4 == 0){
+                ed4.setError("ไม่ผ่าน");
+                ed4.requestFocus();
+            }
+            if(vb5 == 0){
+                ed5.setError("ไม่ผ่าน");
+                ed5.requestFocus();
+            }
+            if(vb6 == 0){
+                ed6.setError("ไม่ผ่าน");
+                ed6.requestFocus();
+            }
+            if(vb7 == 0){
+                ed7.setError("ไม่ผ่าน");
+                ed7.requestFocus();
+            }
+            if(vb8 == 0){
+                ed8.setError("ไม่ผ่าน");
+                ed8.requestFocus();
+            }
+            if(vb9 == 0){
+                ed9.setError("ไม่ผ่าน");
+                ed9.requestFocus();
+            }
+            if(vb10 == 0){
+                ed10.setError("ไม่ผ่าน");
+                ed10.requestFocus();
+            }
+            if(vb11 == 0){
+                ed11.setError("ไม่ผ่าน");
+                ed11.requestFocus();
+            }
+            if(vb12 == 0){
+                ed12.setError("ไม่ผ่าน");
+                ed12.requestFocus();
+            }
+            if(vb13 == 0){
+                ed13.setError("ไม่ผ่าน");
+                ed13.requestFocus();
+            }
+            if(vb14 == 0){
+                ed14.setError("ไม่ผ่าน");
+                ed14.requestFocus();
+            }
+            if(vb15 == 0){
+                ed15.setError("ไม่ผ่าน");
+                ed15.requestFocus();
+            }
+            if(vb16 == 0){
+                ed16.setError("ไม่ผ่าน");
+                ed16.requestFocus();
+            }
+            if(vb17 == 0){
+                ed17.setError("ไม่ผ่าน");
+                ed17.requestFocus();
+            }
+            if(vb18 == 0){
+                ed18.setError("ไม่ผ่าน");
+                ed18.requestFocus();
+            }
 
             FloatingActionButton fab = (FloatingActionButton) v.findViewById(R.id.fab);
             fab.setOnClickListener(new View.OnClickListener() {
@@ -2155,9 +2263,11 @@ public class MainserviceFragment extends Fragment {
 
                     ///// check edittext /////
                     if(vb1 == 0){
+                        ed1.setError("กรุณาข้อมูลให้ครบถ้วน");
+                        ed1.requestFocus();
                         String edt = ed1.getText().toString();
                         String dt = date1.getText().toString();
-                        if(edt.matches("") || dt.matches("วันที่")){
+                        if(edt.matches("") || dt.matches("เลือกวันที่")){
                             edchk1 = 1;
                         }
                         else
@@ -2166,9 +2276,11 @@ public class MainserviceFragment extends Fragment {
                         }
                     }
                     if(vb2 == 0){
+                        ed2.setError("กรุณาข้อมูลให้ครบถ้วน");
+                        ed2.requestFocus();
                         String edt = ed2.getText().toString();
                         String dt = date2.getText().toString();
-                        if(edt.matches("") || dt.matches("วันที่")){
+                        if(edt.matches("") || dt.matches("เลือกวันที่")){
                             edchk2 = 1;
                         }
                         else
@@ -2177,9 +2289,11 @@ public class MainserviceFragment extends Fragment {
                         }
                     }
                     if(vb3 == 0){
+                        ed3.setError("กรุณาข้อมูลให้ครบถ้วน");
+                        ed3.requestFocus();
                         String edt = ed3.getText().toString();
                         String dt = date3.getText().toString();
-                        if(edt.matches("") || dt.matches("วันที่")){
+                        if(edt.matches("") || dt.matches("เลือกวันที่")){
                             edchk3 = 1;
                         }
                         else
@@ -2188,9 +2302,11 @@ public class MainserviceFragment extends Fragment {
                         }
                     }
                     if(vb4 == 0){
+                        ed4.setError("กรุณาข้อมูลให้ครบถ้วน");
+                        ed4.requestFocus();
                         String edt = ed4.getText().toString();
                         String dt = date4.getText().toString();
-                        if(edt.matches("") || dt.matches("วันที่")){
+                        if(edt.matches("") || dt.matches("เลือกวันที่")){
                             edchk4 = 1;
                         }
                         else
@@ -2199,9 +2315,11 @@ public class MainserviceFragment extends Fragment {
                         }
                     }
                     if(vb5 == 0){
+                        ed5.setError("กรุณาข้อมูลให้ครบถ้วน");
+                        ed5.requestFocus();
                         String edt = ed5.getText().toString();
                         String dt = date5.getText().toString();
-                        if(edt.matches("") || dt.matches("วันที่")){
+                        if(edt.matches("") || dt.matches("เลือกวันที่")){
                             edchk5 = 1;
                         }
                         else
@@ -2210,9 +2328,11 @@ public class MainserviceFragment extends Fragment {
                         }
                     }
                     if(vb6 == 0){
+                        ed6.setError("กรุณาข้อมูลให้ครบถ้วน");
+                        ed6.requestFocus();
                         String edt = ed6.getText().toString();
                         String dt = date6.getText().toString();
-                        if(edt.matches("") || dt.matches("วันที่")){
+                        if(edt.matches("") || dt.matches("เลือกวันที่")){
                             edchk6 = 1;
                         }
                         else
@@ -2221,9 +2341,11 @@ public class MainserviceFragment extends Fragment {
                         }
                     }
                     if(vb7 == 0){
+                        ed7.setError("กรุณาข้อมูลให้ครบถ้วน");
+                        ed7.requestFocus();
                         String edt = ed7.getText().toString();
                         String dt = date7.getText().toString();
-                        if(edt.matches("") || dt.matches("วันที่")){
+                        if(edt.matches("") || dt.matches("เลือกวันที่")){
                             edchk7 = 1;
                         }
                         else
@@ -2232,9 +2354,11 @@ public class MainserviceFragment extends Fragment {
                         }
                     }
                     if(vb8 == 0){
+                        ed8.setError("กรุณาข้อมูลให้ครบถ้วน");
+                        ed8.requestFocus();
                         String edt = ed8.getText().toString();
                         String dt = date8.getText().toString();
-                        if(edt.matches("") || dt.matches("วันที่")){
+                        if(edt.matches("") || dt.matches("เลือกวันที่")){
                             edchk8 = 1;
                         }
                         else
@@ -2243,9 +2367,11 @@ public class MainserviceFragment extends Fragment {
                         }
                     }
                     if(vb9 == 0){
+                        ed9.setError("กรุณาข้อมูลให้ครบถ้วน");
+                        ed9.requestFocus();
                         String edt = ed9.getText().toString();
                         String dt = date9.getText().toString();
-                        if(edt.matches("") || dt.matches("วันที่")){
+                        if(edt.matches("") || dt.matches("เลือกวันที่")){
                             edchk9 = 1;
                         }
                         else
@@ -2254,9 +2380,11 @@ public class MainserviceFragment extends Fragment {
                         }
                     }
                     if(vb10 == 0){
+                        ed10.setError("กรุณาข้อมูลให้ครบถ้วน");
+                        ed10.requestFocus();
                         String edt = ed10.getText().toString();
                         String dt = date10.getText().toString();
-                        if(edt.matches("") || dt.matches("วันที่")){
+                        if(edt.matches("") || dt.matches("เลือกวันที่")){
                             edchk10 = 1;
                         }
                         else
@@ -2265,9 +2393,11 @@ public class MainserviceFragment extends Fragment {
                         }
                     }
                     if(vb11 == 0){
+                        ed11.setError("กรุณาข้อมูลให้ครบถ้วน");
+                        ed11.requestFocus();
                         String edt = ed11.getText().toString();
                         String dt = date11.getText().toString();
-                        if(edt.matches("") || dt.matches("วันที่")){
+                        if(edt.matches("") || dt.matches("เลือกวันที่")){
                             edchk11 = 1;
                         }
                         else
@@ -2276,9 +2406,11 @@ public class MainserviceFragment extends Fragment {
                         }
                     }
                     if(vb12 == 0){
+                        ed12.setError("กรุณาข้อมูลให้ครบถ้วน");
+                        ed12.requestFocus();
                         String edt = ed12.getText().toString();
                         String dt = date12.getText().toString();
-                        if(edt.matches("") || dt.matches("วันที่")){
+                        if(edt.matches("") || dt.matches("เลือกวันที่")){
                             edchk12 = 1;
                         }
                         else
@@ -2287,9 +2419,11 @@ public class MainserviceFragment extends Fragment {
                         }
                     }
                     if(vb13 == 0){
+                        ed13.setError("กรุณาข้อมูลให้ครบถ้วน");
+                        ed13.requestFocus();
                         String edt = ed13.getText().toString();
                         String dt = date13.getText().toString();
-                        if(edt.matches("") || dt.matches("วันที่")){
+                        if(edt.matches("") || dt.matches("เลือกวันที่")){
                             edchk13 = 1;
                         }
                         else
@@ -2298,9 +2432,11 @@ public class MainserviceFragment extends Fragment {
                         }
                     }
                     if(vb14 == 0){
+                        ed14.setError("กรุณาข้อมูลให้ครบถ้วน");
+                        ed14.requestFocus();
                         String edt = ed14.getText().toString();
                         String dt = date14.getText().toString();
-                        if(edt.matches("") || dt.matches("วันที่")){
+                        if(edt.matches("") || dt.matches("เลือกวันที่")){
                             edchk14 = 1;
                         }
                         else
@@ -2309,9 +2445,11 @@ public class MainserviceFragment extends Fragment {
                         }
                     }
                     if(vb15 == 0){
+                        ed15.setError("กรุณาข้อมูลให้ครบถ้วน");
+                        ed15.requestFocus();
                         String edt = ed15.getText().toString();
                         String dt = date15.getText().toString();
-                        if(edt.matches("") || dt.matches("วันที่")){
+                        if(edt.matches("") || dt.matches("เลือกวันที่")){
                             edchk15 = 1;
                         }
                         else
@@ -2320,9 +2458,11 @@ public class MainserviceFragment extends Fragment {
                         }
                     }
                     if(vb16 == 0){
+                        ed16.setError("กรุณาข้อมูลให้ครบถ้วน");
+                        ed16.requestFocus();
                         String edt = ed16.getText().toString();
                         String dt = date16.getText().toString();
-                        if(edt.matches("") || dt.matches("วันที่")){
+                        if(edt.matches("") || dt.matches("เลือกวันที่")){
                             edchk16 = 1;
                         }
                         else
@@ -2331,9 +2471,11 @@ public class MainserviceFragment extends Fragment {
                         }
                     }
                     if(vb17 == 0){
+                        ed17.setError("กรุณาข้อมูลให้ครบถ้วน");
+                        ed17.requestFocus();
                         String edt = ed17.getText().toString();
                         String dt = date17.getText().toString();
-                        if(edt.matches("") || dt.matches("วันที่")){
+                        if(edt.matches("") || dt.matches("เลือกวันที่")){
                             edchk17 = 1;
                         }
                         else
@@ -2342,9 +2484,11 @@ public class MainserviceFragment extends Fragment {
                         }
                     }
                     if(vb18 == 0){
+                        ed18.setError("กรุณาข้อมูลให้ครบถ้วน");
+                        ed18.requestFocus();
                         String edt = ed18.getText().toString();
                         String dt = date18.getText().toString();
-                        if(edt.matches("") || dt.matches("วันที่")){
+                        if(edt.matches("") || dt.matches("เลือกวันที่")){
                             edchk18 = 1;
                         }
                         else

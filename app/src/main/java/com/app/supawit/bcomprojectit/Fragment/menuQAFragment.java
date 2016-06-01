@@ -1,6 +1,8 @@
 package com.app.supawit.bcomprojectit.Fragment;
 
+import android.annotation.TargetApi;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
@@ -17,7 +19,9 @@ import android.widget.TextView;
 import com.app.supawit.bcomprojectit.ConnectionSQL;
 import com.app.supawit.bcomprojectit.R;
 
+import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -34,6 +38,7 @@ public class menuQAFragment extends Fragment {
     ImageView imageView;
     String area;
     String abbname;
+    String aa;
     ConnectionSQL connectionSQL;
     Integer check = 1;
     RelativeLayout btna,btnb;
@@ -41,6 +46,7 @@ public class menuQAFragment extends Fragment {
         // Required empty public constructor
     }
 
+    @TargetApi(23)
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -76,21 +82,56 @@ public class menuQAFragment extends Fragment {
         btna = (RelativeLayout) v.findViewById(R.id.relativebtn1);
         btnb = (RelativeLayout) v.findViewById(R.id.relativebtn2);
 
-        btnb.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                CapFragment fragment = new CapFragment();
-                Bundle bundle = new Bundle();
-                bundle.putString("Key",test.getText().toString());
-                bundle.putString("area",area);
+        final String dd = test.getText().toString();
+        try {
+            connectionSQL = new ConnectionSQL();
+            Connection con = connectionSQL.CONN();
+            stmt = con.createStatement();
+            String query = "select * from Imgtbl2 where ImgName = '"+dd+"'";
 
-                fragment.setArguments(bundle);
-                FragmentManager fragmentManager = getFragmentManager();
-                FragmentTransaction fragTransaction = fragmentManager.beginTransaction();
-                //fragTransaction.replace(R.id.fragment_con,fragment);
-                fragTransaction.replace(R.id.fragment_con,fragment).addToBackStack(null).commit();
+            rs = stmt.executeQuery(query);
+
+            if (rs.next()) {
+                aa = "ss";
             }
-        });
+            else
+            {
+                aa = "ff";
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        if(aa == "ss"){
+            //r1.setBackgroundColor(Color.GRAY);
+            final int sdk = android.os.Build.VERSION.SDK_INT;
+            if(sdk < android.os.Build.VERSION_CODES.JELLY_BEAN) {
+                btnb.setBackgroundDrawable( getResources().getDrawable(R.drawable.bgbtn1) );
+            } else {
+                btnb.setBackground( getResources().getDrawable(R.drawable.bgbtn1));
+            }
+        }
+        else{
+
+            btnb.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    CapFragment fragment = new CapFragment();
+                    Bundle bundle = new Bundle();
+                    bundle.putString("Key",test.getText().toString());
+                    bundle.putString("area",area);
+
+                    fragment.setArguments(bundle);
+                    FragmentManager fragmentManager = getFragmentManager();
+                    FragmentTransaction fragTransaction = fragmentManager.beginTransaction();
+                    //fragTransaction.replace(R.id.fragment_con,fragment);
+                    fragTransaction.replace(R.id.fragment_con,fragment).addToBackStack(null).commit();
+                }
+            });
+        }
+
+
 
 
         btna.setOnClickListener(new View.OnClickListener() {
